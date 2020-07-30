@@ -1,0 +1,12 @@
+{
+  "name": "xcopy-project",
+  "version": "0.0.0",
+  "description": "XcopyProject",
+  "main": "server.js",
+  "author": {
+    "name": "SWW"
+  },
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  }
+}
