@@ -77,7 +77,6 @@
     <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPlugin_v0.10.09.txt" />
     <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
     <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
-    <None Include="Assets\ExternalDependencyManager\Editor\external-dependency-manager_version-1.2.153_manifest.txt" />
     <None Include="Assets\GooglePlayGames\Editor\m2repository\com\google\games\gpgs-plugin-support\maven-metadata.xml" />
     <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\GooglePlayGames\Editor\template-Constants.txt" />
@@ -279,41 +278,44 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/PackageCache/com.google.external-dependency-manager@1.2.156/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.153">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.153.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.153">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.153.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.153">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.153.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.PackageManagerResolver_v1.2.153">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.153.dll</HintPath>
-    </Reference>
-    <Reference Include="SuperSocket.ClientEngine.Proxy">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SuperSocket.ClientEngine.Proxy.dll</HintPath>
+    <Reference Include="SimpleJson">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SimpleJson.dll</HintPath>
     </Reference>
     <Reference Include="SocketIO">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SocketIO.dll</HintPath>
     </Reference>
+    <Reference Include="SuperSocket.ClientEngine.Common">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SuperSocket.ClientEngine.Common.dll</HintPath>
+    </Reference>
     <Reference Include="SuperSocket.ClientEngine.Core">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SuperSocket.ClientEngine.Core.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleJson">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SimpleJson.dll</HintPath>
+    <Reference Include="SuperSocket.ClientEngine.Protocol">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SuperSocket.ClientEngine.Protocol.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine.Proxy">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SuperSocket.ClientEngine.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="WebSocket4Net">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/WebSocket4Net.dll</HintPath>
     </Reference>
-    <Reference Include="SuperSocket.ClientEngine.Common">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SuperSocket.ClientEngine.Common.dll</HintPath>
+    <Reference Include="Google.IOSResolver_v1.2.156">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/PackageCache/com.google.external-dependency-manager@1.2.156/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.156.dll</HintPath>
     </Reference>
-    <Reference Include="SuperSocket.ClientEngine.Protocol">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SuperSocket.ClientEngine.Protocol.dll</HintPath>
+    <Reference Include="Google.JarResolver_v1.2.156">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/PackageCache/com.google.external-dependency-manager@1.2.156/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.156.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.PackageManagerResolver_v1.2.156">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/PackageCache/com.google.external-dependency-manager@1.2.156/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.156.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/PackageCache/com.google.external-dependency-manager@1.2.156/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.156">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/PackageCache/com.google.external-dependency-manager@1.2.156/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.156.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -713,6 +715,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{FAC72947-587E-E7A9-127C-67702DB297C3}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{00DDC077-C854-9CE8-C696-4D553D546113}</Project>
       <Name>Assembly-CSharp</Name>
