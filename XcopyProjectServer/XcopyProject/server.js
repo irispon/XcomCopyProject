@@ -24,10 +24,28 @@ var io = require('socket.io')(app);
 var chat = io
     .of('/chat')
     .on('connection', function (socket) {
-        chat.emit('a message', { everyone: 'in', '/chat': 'will get' });
-        socket.emit('a message', { that: 'only', '/chat': 'will get' });
-        console.log("__dirname" + __dirname);
+       // chat.emit('a message', { everyone: 'in', '/chat': 'will get' });
+     //   socket.emit('a message', { that: 'only', '/chat': 'will get' });
+        console.log("__dirname: " + __dirname);
+
+        socket.on('chat', function (socket) {
+
+            try {
+                console.debug('callback');
+                console.debug(socket);
+                chat.emit('chat', socket);
+            } catch (e) {
+                console.log(e);
+            }
+
+
+
+        });
+
     });
+
+
+
 
 // news 네임스페이스
 var news = io
@@ -35,3 +53,4 @@ var news = io
     .on('connection', function (socket) {
         socket.emit('item', { news: 'item' });
     });
+

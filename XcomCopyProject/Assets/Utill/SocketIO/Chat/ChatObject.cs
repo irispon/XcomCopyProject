@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ChatObject:MonoBehaviour
 {
-    public Image profil;
+    public Image profile;
+    public TextMeshProUGUI client;
     public TextMeshProUGUI outputText;
 }

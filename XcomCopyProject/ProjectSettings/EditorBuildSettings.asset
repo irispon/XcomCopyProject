@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SocketTest.unity
+    guid: bb6a135944ad6fc4a8b48eb42064fc4b
   m_configObjects: {}

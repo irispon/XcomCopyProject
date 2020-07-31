@@ -409,6 +409,9 @@
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleJson">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/SimpleJson.dll</HintPath>
     </Reference>
@@ -429,9 +432,6 @@
     </Reference>
     <Reference Include="WebSocket4Net">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/Plugins/WebSocket4Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

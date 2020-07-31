@@ -16,3 +16,7 @@ public enum SystemEvent
 {
     reconnect, connect, reconnecting, connectError, reconnectError, connectTimeOut
 }
+public enum ChatHelper
+{
+    Client,Message,Sprite
+}
