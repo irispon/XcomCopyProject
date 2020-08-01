@@ -14,6 +14,7 @@ public class SceneLoader : MonoBehaviour
     {
         List<ILoader> iloaders = new List<ILoader>(loaders);
         LoadingManager.LoadScene(scene, loaders: iloaders);
+
     }
 
     // Update is called once per frame

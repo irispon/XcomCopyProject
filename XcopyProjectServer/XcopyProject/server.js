@@ -49,12 +49,25 @@ var chat = io
      //   socket.emit('a message', { that: 'only', '/chat': 'will get' });
         console.log("__dirname: " + __dirname);
 
-        socket.on('chat', function (socket) {
+        socket.on('chat', function (data) {
 
             try {
                 console.debug('callback');
-                console.debug(socket);
-                chat.emit('chat', socket);
+                console.debug(data);
+                chat.emit('chat', data);
+            } catch (e) {
+                console.log(e);
+            }
+
+
+
+        });
+        socket.on('disconnect', function (data) {
+
+            try {
+                console.debug('disconnect' + data);
+                socket.disconnect();
+
             } catch (e) {
                 console.log(e);
             }
@@ -66,10 +79,41 @@ var chat = io
     });
 
 // news 네임스페이스
-var news = io
-    .of('/news')
+var dbIo = io
+    .of('/database')
     .on('connection', function (socket) {
-        socket.emit('item', { news: 'item' });
-    });
+        socket.on('', function (sql) {
+
+            try {
+
+                connection.query(sql, (error, rows, fields) => {
+
+                    console.log('User info is: ', rows, fields);
+                    socket.emit('dataBase', rows);
+                });
+
+            } catch (e) {
+
+                socket.emit('error', e);
+
+            }
+            socket.on('disconnect', function (data) {
+
+                try {
+                    console.debug('disconnect' + data);
+                    socket.disconnect();
+
+                } catch (e) {
+                    console.log(e);
+                }
+
+
+
+            });
+
+        });
+
+            });
+
 
 

@@ -17,6 +17,7 @@ public class ChatClient : MonoBehaviour
         manager = ChatManager.GetInstance();
         inputText = manager.inputText;
         chat = Socket.Connect(SocketIOHelper.SERVERPATH + "/"+SocketEvent.chat.ToString());
+      
         chat.On("connect", () => {
             Debug.Log("채팅 서버 접속"+ chat.IsConnected);
             chat.On(SocketEvent.chat.ToString(), messageTarget);

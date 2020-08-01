@@ -143,6 +143,7 @@
     <Compile Include="Assets\Utill\DictionaryAccessUtill.cs" />
     <Compile Include="Assets\Utill\DoubleKeyDictionary.cs" />
     <Compile Include="Assets\Utill\EnumUtills.cs" />
+    <Compile Include="Assets\Utill\File\FileDownloader.cs" />
     <Compile Include="Assets\Utill\FileManager.cs" />
     <Compile Include="Assets\Utill\Google\GooglePlayManager.cs" />
     <Compile Include="Assets\Utill\Graphic\DragAndDrop\Container.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Assets\Utill\ObjectPool\ObjectPool.cs" />
     <Compile Include="Assets\Utill\ObjectPool\ObjectPoolManager.cs" />
     <Compile Include="Assets\Utill\ObjectPool\PoolChild.cs" />
+    <Compile Include="Assets\Utill\Permission\Permission.cs" />
     <Compile Include="Assets\Utill\Singletons\Singleton.cs" />
     <Compile Include="Assets\Utill\Singletons\SingletonObject.cs" />
     <Compile Include="Assets\Utill\Singletons\SingletonObjectSlave.cs" />
@@ -198,6 +200,7 @@
     <Compile Include="Assets\Utill\SocketIO\Chat\JsonConvertable.cs" />
     <Compile Include="Assets\Utill\SocketIO\Sample.cs" />
     <Compile Include="Assets\Utill\SocketIO\SocketIOHelper.cs" />
+    <Compile Include="Assets\Utill\SocketIO\SocketManager.cs" />
     <Compile Include="Assets\Utill\SpriteSize.cs" />
     <Compile Include="Assets\Utill\UI\FloatText.cs" />
     <Compile Include="Assets\Utill\UI\HPControler.cs" />
@@ -816,14 +819,14 @@
     <Reference Include="Unity.DeviceSimulator.Editor">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/ScriptAssemblies/Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/UnityProject/XcomCopyProject/XcomCopyProject/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
