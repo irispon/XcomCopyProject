@@ -1,7 +1,28 @@
 var app = require('http').createServer(handler)
 var fs = require('fs');
+var database = require(__dirname + '/config/database_config.js');
+var connection = database.init();
 
 app.listen(4444);
+
+
+try {
+  
+ 
+    database.connect(connection);
+
+        
+    connection.query('SELECT * from profileresource', (error, rows, fields) => {
+        if (error) throw error;
+        console.log('User info is: ', rows,fields);
+    });
+}catch (e) {
+
+    console.log(e);
+}
+
+
+
 
 function handler(req, res) {
 
@@ -44,13 +65,11 @@ var chat = io
 
     });
 
-
-
-
 // news 네임스페이스
 var news = io
     .of('/news')
     .on('connection', function (socket) {
         socket.emit('item', { news: 'item' });
     });
+
 

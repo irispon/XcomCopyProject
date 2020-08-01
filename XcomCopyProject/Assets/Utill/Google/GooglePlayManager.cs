@@ -15,9 +15,11 @@ public class GooglePlayManager : MonoBehaviour
 
     void Awake()
     {
+        /*
         PlayGamesPlatform.InitializeInstance(new PlayGamesClientConfiguration.Builder().Build());
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
+        */
 
         text.text = "no Login";
     }
@@ -52,7 +54,7 @@ public class GooglePlayManager : MonoBehaviour
 
     public void OnLogOut()
     {
-        ((PlayGamesPlatform)Social.Active).SignOut();
+     //   ((PlayGamesPlatform)Social.Active).SignOut();
         text.text = "Logout";
     }
 }
