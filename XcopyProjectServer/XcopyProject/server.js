@@ -46,21 +46,7 @@ function handler(req, res) {
 
 }
 
-app.get('/database', function (req, res) {
-
-    console.log(req.url);
-    console.log(req.body);
-    try {
-        console.log(req.url);
-        res.json('test:test');
-    } catch (e) {
-        console.log(e);
-    }
-
-    res.end();
-
-});
-
+//데이터 베이스 정보 요청 코드
 app.post('/database', function (req, res) {
 
     console.log(req.url);
@@ -84,19 +70,14 @@ app.post('/database', function (req, res) {
 
 
 });
-
-
-
-
-
-
+//데이터 베이스 정보 요청 코드
 
 
 
 // socket.io 스타트
 var io = require('socket.io')(server);
 
-// chat 네임스페이스
+// 채팅방//
 var chat = io
     .of('/chat')
     .on('connection', function (socket) {
@@ -124,47 +105,6 @@ var chat = io
         });
   
     });
-
-// 
-//var dbIo = io
-//    .of('/database')
-//    .on('connection', function (socket) {
-//        socket.on('', function (sql) {
-
-//            try {
-
-//                connection.query(sql, (error, rows, fields) => {
-
-//                   var ret = JSON.stringify(rows);
-//                    console.log('User info is: ', ret);
-
-//                    socket.emit('database', ret);
-//                });
-
-//            } catch (e) {
-
-//                socket.emit('error', e);
-
-//            }
-//            socket.on('disconnect', function (data) {
-
-//                try {
-//                    console.debug('disconnect' + data);
-//                    socket.disconnect(0);
-
-//                } catch (e) {
-//                    console.log(e);
-//                }
-
-
-
-//            });
-
-//        });
-
-//            });
-
-
-
+// 채팅방//
 
 

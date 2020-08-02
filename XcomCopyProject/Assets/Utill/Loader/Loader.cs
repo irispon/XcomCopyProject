@@ -29,7 +29,7 @@ public class Loader :MonoBehaviour,ILoader
 
         });
 
-
+      
             
     }
     public ILoader GetLoader()

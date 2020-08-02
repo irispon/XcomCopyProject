@@ -9,7 +9,6 @@ using UnityEngine.Networking;
 public class DataBaseManager : SingletonObject<DataBaseManager>
 {
     // Start is called before the first frame update
-    Socket dbSocket;
     string uri = SocketIOHelper.SERVERPATH + "/" + SocketEvent.database;
     public override void Init()
     {
@@ -17,7 +16,7 @@ public class DataBaseManager : SingletonObject<DataBaseManager>
 
     }
 
-    public void GetDatabase(string sql,Action<JArray> action)
+    public void GetData(string sql,Action<JArray> action)
     {
 
         StartCoroutine(GetRequest(sql, action));

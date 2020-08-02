@@ -130,8 +130,9 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
-    <Compile Include="Assets\Loader\DataBaseLoader.cs" />
+    <Compile Include="Assets\Loader\ProfileLoader.cs" />
     <Compile Include="Assets\ProfileChace.cs" />
+    <Compile Include="Assets\ProfileImageChache.cs" />
     <Compile Include="Assets\Utill\APathFind.cs" />
     <Compile Include="Assets\Utill\Adadter.cs" />
     <Compile Include="Assets\Utill\Asset\LightningBolt\ChainEffectChild.cs" />
