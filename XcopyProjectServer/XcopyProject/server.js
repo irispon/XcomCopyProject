@@ -1,26 +1,32 @@
-var app = require('http').createServer(handler)
+
+var http = require('http');
+var express = require('express');
+var router = express.Router();
+var app = express();
+var server = http.createServer(app,handler);
 var fs = require('fs');
 var database = require(__dirname + '/config/database_config.js');
 var connection = database.init();
+var request = require('request');
 
-app.listen(4444);
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
+server.listen(4444);
 
 try {
-  
- 
-    database.connect(connection);
 
-        
+
+    database.connect(connection);
     connection.query('SELECT * from profileresource', (error, rows, fields) => {
         if (error) throw error;
-        console.log('User info is: ', rows,fields);
+        console.log('User info is: ', rows);
     });
-}catch (e) {
+} catch (e) {
 
     console.log(e);
 }
-
 
 
 
@@ -32,14 +38,63 @@ function handler(req, res) {
                 res.writeHead(500);
                 return res.end('Error loading index.html');
             }
-   
+
             res.writeHead(200);
             res.end(data);
         });
+
+
 }
 
+app.get('/database', function (req, res) {
+
+    console.log(req.url);
+    console.log(req.body);
+    try {
+        console.log(req.url);
+        res.json('test:test');
+    } catch (e) {
+        console.log(e);
+    }
+
+    res.end();
+
+});
+
+app.post('/database', function (req, res) {
+
+    console.log(req.url);
+    var string;
+    var json;
+    console.log(req.body.sql);
+    try {
+        connection.query(req.body.sql, (error, rows, fields) => {
+            if (error) throw error;
+            string = JSON.stringify(rows);
+            json = JSON.parse(string);
+         
+            console.log(json);
+            res.send(json);
+            res.end();
+
+        });
+    } catch (e) {
+        console.log(e);
+    }
+
+
+});
+
+
+
+
+
+
+
+
+
 // socket.io 스타트
-var io = require('socket.io')(app);
+var io = require('socket.io')(server);
 
 // chat 네임스페이스
 var chat = io
@@ -52,21 +107,10 @@ var chat = io
         socket.on('chat', function (data) {
 
             try {
-                console.debug('callback');
+                
                 console.debug(data);
+                console.debug(chat.clients.length);
                 chat.emit('chat', data);
-            } catch (e) {
-                console.log(e);
-            }
-
-
-
-        });
-        socket.on('disconnect', function (data) {
-
-            try {
-                console.debug('disconnect' + data);
-                socket.disconnect();
 
             } catch (e) {
                 console.log(e);
@@ -75,45 +119,52 @@ var chat = io
 
 
         });
-
+        socket.on("disconnect", function () {
+         socket.disconnect(0);
+        });
+  
     });
 
-// news 네임스페이스
-var dbIo = io
-    .of('/database')
-    .on('connection', function (socket) {
-        socket.on('', function (sql) {
+// 
+//var dbIo = io
+//    .of('/database')
+//    .on('connection', function (socket) {
+//        socket.on('', function (sql) {
 
-            try {
+//            try {
 
-                connection.query(sql, (error, rows, fields) => {
+//                connection.query(sql, (error, rows, fields) => {
 
-                    console.log('User info is: ', rows, fields);
-                    socket.emit('dataBase', rows);
-                });
+//                   var ret = JSON.stringify(rows);
+//                    console.log('User info is: ', ret);
 
-            } catch (e) {
+//                    socket.emit('database', ret);
+//                });
 
-                socket.emit('error', e);
+//            } catch (e) {
 
-            }
-            socket.on('disconnect', function (data) {
+//                socket.emit('error', e);
 
-                try {
-                    console.debug('disconnect' + data);
-                    socket.disconnect();
+//            }
+//            socket.on('disconnect', function (data) {
 
-                } catch (e) {
-                    console.log(e);
-                }
+//                try {
+//                    console.debug('disconnect' + data);
+//                    socket.disconnect(0);
+
+//                } catch (e) {
+//                    console.log(e);
+//                }
 
 
 
-            });
+//            });
 
-        });
+//        });
 
-            });
+//            });
+
+
 
 
 

@@ -38,7 +38,7 @@ public class ChatClient : MonoBehaviour
             message.Add(ChatHelper.Client.ToString(), "First");
             message.Add(ChatHelper.Message.ToString(),inputText.text);
             inputText.text = "";
-            Debug.Log(message);
+       //     Debug.Log(message);
             
             chat.EmitJson(SocketEvent.chat.ToString(), message.ToString());
 

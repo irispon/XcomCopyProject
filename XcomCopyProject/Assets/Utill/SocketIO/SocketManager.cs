@@ -11,6 +11,7 @@ public class SocketManager :SingletonObject<SocketManager>
     public override void Init()
     {
         sockets = new Dictionary<SocketEvent, Socket>();
+        DontDestroyOnLoad(this);
     }
     public Socket GetSocket(SocketEvent socketEvent)
     {
@@ -31,6 +32,27 @@ public class SocketManager :SingletonObject<SocketManager>
      
         return socket;
     }
- 
 
+
+    public void Clear()
+    {
+        foreach(Socket socket in sockets.Values)
+        {
+            Destroy(socket.gameObject);
+        }
+
+    }
+    public void Close(Socket socket)
+    {
+        socket.Emit("disconnect");
+        Destroy(socket.gameObject);
+    }
+    public void Close(SocketEvent @event)
+    {
+        if (sockets.ContainsKey(@event))
+        {
+            Close(sockets[@event]);
+        }
+    
+    }
 }

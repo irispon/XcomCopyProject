@@ -10,11 +10,11 @@ public class SocketIOHelper
 
 public enum SocketEvent
 {
-    chat
+    chat, database
 }
-public enum SystemEvent
+public enum ServerEvent
 {
-    reconnect, connect, reconnecting, connectError, reconnectError, connectTimeOut
+    reconnect, connect, reconnecting, connectError, reconnectError, connectTimeOut, connection, disconnect
 }
 public enum ChatHelper
 {

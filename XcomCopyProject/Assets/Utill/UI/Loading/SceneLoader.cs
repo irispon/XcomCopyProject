@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using socket.io;
+
 using UnityEngine;
+using WebSocketSharp.Server;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -12,14 +15,11 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         List<ILoader> iloaders = new List<ILoader>(loaders);
         LoadingManager.LoadScene(scene, loaders: iloaders);
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

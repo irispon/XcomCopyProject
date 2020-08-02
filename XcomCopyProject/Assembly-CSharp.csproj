@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DataBaseManager.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Assets\Utill\Graphic\DragAndDrop\Pointer.cs" />
     <Compile Include="Assets\Utill\Graphic\MenuDrag.cs" />
     <Compile Include="Assets\Utill\Graphic\SpriteSpliter.cs" />
+    <Compile Include="Assets\Utill\IDataBaseCallBack.cs" />
     <Compile Include="Assets\Utill\Interact\ButtomInteract.cs" />
     <Compile Include="Assets\Utill\Interact\Mouse.cs" />
     <Compile Include="Assets\Utill\Interact\Overay.cs" />
@@ -188,6 +190,7 @@
     <Compile Include="Assets\Utill\ObjectPool\ObjectPoolManager.cs" />
     <Compile Include="Assets\Utill\ObjectPool\PoolChild.cs" />
     <Compile Include="Assets\Utill\Permission\Permission.cs" />
+    <Compile Include="Assets\Utill\SendRequest.cs" />
     <Compile Include="Assets\Utill\Singletons\Singleton.cs" />
     <Compile Include="Assets\Utill\Singletons\SingletonObject.cs" />
     <Compile Include="Assets\Utill\Singletons\SingletonObjectSlave.cs" />

@@ -9,7 +9,7 @@ public class DataBaseLoader : Loader
     public override void Load()
     {
 
-        base.Load();
+       // base.Load();
     }
     // Update is called once per frame
     void Update()
