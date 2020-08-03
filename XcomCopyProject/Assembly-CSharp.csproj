@@ -147,6 +147,7 @@
     <Compile Include="Assets\Utill\EnumUtills.cs" />
     <Compile Include="Assets\Utill\File\FileDownloader.cs" />
     <Compile Include="Assets\Utill\FileManager.cs" />
+    <Compile Include="Assets\Utill\Google\BackEndFederationAuth.cs" />
     <Compile Include="Assets\Utill\Google\GooglePlayManager.cs" />
     <Compile Include="Assets\Utill\Graphic\DragAndDrop\Container.cs" />
     <Compile Include="Assets\Utill\Graphic\DragAndDrop\Content.cs" />
