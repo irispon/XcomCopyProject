@@ -27,8 +27,15 @@ login.in = function (app, connection) {
                 string = JSON.stringify(rows);
                 json = JSON.parse(string);
 
-                console.log(json);
-                res.send(json);
+                if (json == '[]') {
+                    res.send(false);
+                } else {
+
+                    res.send(true);
+
+                }
+              
+                console.log(json); 
                 res.end();
               
             });

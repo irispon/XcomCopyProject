@@ -27,7 +27,7 @@ public class DataBaseManager : SingletonObject<DataBaseManager>
        
         WWWForm wWForm = new WWWForm();
         wWForm.AddField("sql", sql);
-        UnityWebRequest uwr = UnityWebRequest.Post(ServerHelper.DATABASEACESS, wWForm);
+        UnityWebRequest uwr = UnityWebRequest.Post(ServerHelper.DATABASEPATH(), wWForm);
 
 
         yield return uwr.SendWebRequest();

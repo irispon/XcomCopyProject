@@ -31,6 +31,9 @@
     <Content Include="config\database_config.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="views\index.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\module\emailCertification.js">
       <SubType>Code</SubType>
     </Content>
@@ -45,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="config\" />
+    <Folder Include="views\" />
     <Folder Include="src\" />
     <Folder Include="src\module\" />
     <Folder Include="src\resources\" />

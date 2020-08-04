@@ -16,17 +16,28 @@ public class Login : MonoBehaviour
 
    public async void Click()
     {
-        Task<JArray> request = CertificateRequest(ServerHelper.LOGIN, "iris", "t8529741");
-     //   Debug.Log("백그라운드 테스트");
-        JArray jArray = await request;
+        Task<bool> request = CertificateRequest(ServerHelper.LOGINPATH(), "iris", "t529741");
+        //   Debug.Log("백그라운드 테스트");
+        bool login = await request;
+       
+        if (login)
+        {
+            Debug.Log("로그인 성공");
+
+        }
+        else
+        {
+
+            Debug.Log("비밀번호나 아이디 입력이 잘못되었습니다.");
+        }
       //  Debug.Log("2번째" + jArray.ToString());
     }
 
-    async Task<JArray> CertificateRequest(string uri,string id,string password)
+    async Task<bool> CertificateRequest(string uri,string id,string password)
     {
         string certification=string.Empty;
-        JArray jObject = null;
 
+        Debug.Log(uri);
         WWWForm wWForm = new WWWForm();
         wWForm.AddField("id", id);
         wWForm.AddField("password", password);
@@ -37,7 +48,7 @@ public class Login : MonoBehaviour
    
         while (!uwr.isDone)
         {
-          await Task.Delay(100);
+          await Task.Delay(10);
             //나중에 변경해야될 코드.(로그인이 안되는 경우)
         }
       
@@ -46,18 +57,23 @@ public class Login : MonoBehaviour
         if (uwr.isNetworkError)
         {
             Debug.Log("Error While Sending: " + uwr.error);
-            return null;
+
+            return false;
         }
         else
         {
             Debug.Log("Received: " + uwr.downloadHandler.text);
-            jObject = JArray.Parse(uwr.downloadHandler.text);
-            Debug.Log(jObject);
+
+            if (uwr.downloadHandler.text.Equals("true"))
+            {
+                return true;
+            }
+           
 
 
         }
 
-        return jObject;
+        return false;
 
     }
 

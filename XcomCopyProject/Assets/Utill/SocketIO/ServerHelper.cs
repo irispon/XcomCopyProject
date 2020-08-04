@@ -5,9 +5,22 @@ using UnityEngine;
 public class ServerHelper 
 {
 
-    public static string SERVERPATH = "http://localhost:4444";
-    public static string DATABASEACESS = SERVERPATH + "/" + PostEvent.database.ToString();
-    public static string LOGIN = SERVERPATH + "/" + PostEvent.login;
+    public static string SERVERPATH = "http://122.38.89.43:4444";
+ //   public static string DATABASEACESS = SERVERPATH + "/" + PostEvent.database.ToString();
+    public static string DATABASEPATH()
+    {
+
+        string DATABASEACESS = SERVERPATH + "/" + PostEvent.database.ToString();
+        return DATABASEACESS;
+    }
+
+    public static string LOGINPATH()
+    {
+
+        string LOGIN = SERVERPATH + "/" + PostEvent.login;
+        return LOGIN;
+    }
+
 }
 
 public enum SocketEvent

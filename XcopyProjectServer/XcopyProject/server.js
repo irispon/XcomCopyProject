@@ -11,10 +11,15 @@ var connection = database.init();
 var request = require('request');
 
 var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
 
 server.listen(4444);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
 
 try {
 
@@ -35,7 +40,7 @@ function handler(req, res) {
 
 
     response.writeHead(200, { 'Content-Type': 'text/html;charset=UTF-8' });
-    console.log('test');
+    console.log('test' + __dirname + '/index.html');
     fs.readFile(__dirname + '/index.html',
         function (err, data) {
             if (err) {
@@ -50,6 +55,11 @@ function handler(req, res) {
 
 }
 
+app.get('/', function (req, res) {
+    res.render('index.html');
+    res.send(true);
+
+});
 //데이터 베이스 정보 요청 코드
 app.post('/database', function (req, res) {
 

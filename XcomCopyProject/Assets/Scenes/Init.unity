@@ -314,8 +314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd00d434e6d999e48a09f8958c71546c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: SocketTest
+  scene: Login
   loaders: []
+  isLocal: 0
 --- !u!4 &1638418184
 Transform:
   m_ObjectHideFlags: 0

@@ -194,6 +194,7 @@
     <Compile Include="Assets\Utill\ObjectPool\PoolChild.cs" />
     <Compile Include="Assets\Utill\Permission\Permission.cs" />
     <Compile Include="Assets\Utill\SendRequest.cs" />
+    <Compile Include="Assets\Utill\ServerUtill\Post.cs" />
     <Compile Include="Assets\Utill\Singletons\Singleton.cs" />
     <Compile Include="Assets\Utill\Singletons\SingletonObject.cs" />
     <Compile Include="Assets\Utill\Singletons\SingletonObjectSlave.cs" />
