@@ -131,6 +131,7 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
     <Compile Include="Assets\Loader\ProfileLoader.cs" />
+    <Compile Include="Assets\Login.cs" />
     <Compile Include="Assets\ProfileChace.cs" />
     <Compile Include="Assets\ProfileImageChache.cs" />
     <Compile Include="Assets\Utill\APathFind.cs" />
@@ -204,7 +205,7 @@
     <Compile Include="Assets\Utill\SocketIO\Chat\ChatObject.cs" />
     <Compile Include="Assets\Utill\SocketIO\Chat\JsonConvertable.cs" />
     <Compile Include="Assets\Utill\SocketIO\Sample.cs" />
-    <Compile Include="Assets\Utill\SocketIO\SocketIOHelper.cs" />
+    <Compile Include="Assets\Utill\SocketIO\ServerHelper.cs" />
     <Compile Include="Assets\Utill\SocketIO\SocketManager.cs" />
     <Compile Include="Assets\Utill\SpriteSize.cs" />
     <Compile Include="Assets\Utill\UI\FloatText.cs" />

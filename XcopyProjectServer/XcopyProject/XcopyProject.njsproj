@@ -31,12 +31,24 @@
     <Content Include="config\database_config.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\module\emailCertification.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="server.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\module\login.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\resources\auth\email.png" />
+    <Content Include="src\resources\auth\emailtemplete.ejs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="config\" />
+    <Folder Include="src\" />
+    <Folder Include="src\module\" />
+    <Folder Include="src\resources\" />
+    <Folder Include="src\resources\auth\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

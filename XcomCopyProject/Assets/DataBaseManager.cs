@@ -9,7 +9,7 @@ using UnityEngine.Networking;
 public class DataBaseManager : SingletonObject<DataBaseManager>
 {
     // Start is called before the first frame update
-    string uri = SocketIOHelper.SERVERPATH + "/" + SocketEvent.database;
+
     public override void Init()
     {
         DontDestroyOnLoad(this);
@@ -27,7 +27,7 @@ public class DataBaseManager : SingletonObject<DataBaseManager>
        
         WWWForm wWForm = new WWWForm();
         wWForm.AddField("sql", sql);
-        UnityWebRequest uwr = UnityWebRequest.Post(uri, wWForm);
+        UnityWebRequest uwr = UnityWebRequest.Post(ServerHelper.DATABASEACESS, wWForm);
 
 
         yield return uwr.SendWebRequest();

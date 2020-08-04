@@ -25,7 +25,7 @@ public class SocketManager :SingletonObject<SocketManager>
         }
         else
         {
-            socket = Socket.Connect(SocketIOHelper.SERVERPATH + "/" + socketEvent.ToString());
+            socket = Socket.Connect(ServerHelper.SERVERPATH + "/" + socketEvent.ToString());
             sockets.Add(socketEvent, socket);
         }
    

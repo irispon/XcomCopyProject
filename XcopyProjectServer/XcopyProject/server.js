@@ -1,4 +1,5 @@
 
+var certification = require('./src/module/emailCertification');
 var http = require('http');
 var express = require('express');
 var router = express.Router();
@@ -19,10 +20,10 @@ try {
 
 
     database.connect(connection);
-    connection.query('SELECT * from profileresource', (error, rows, fields) => {
-        if (error) throw error;
-        console.log('User info is: ', rows);
-    });
+    //connection.query('SELECT * FROM profileresource', (error, rows, fields) => {
+    //    if (error) throw error;
+    //    console.log('User info is: ', rows);
+    //});
 } catch (e) {
 
     console.log(e);
@@ -32,6 +33,9 @@ try {
 
 function handler(req, res) {
 
+
+    response.writeHead(200, { 'Content-Type': 'text/html;charset=UTF-8' });
+    console.log('test');
     fs.readFile(__dirname + '/index.html',
         function (err, data) {
             if (err) {
@@ -107,4 +111,22 @@ var chat = io
     });
 // 채팅방//
 
+///이메일 인증
+try {
+    certification.send(app);
+}
+catch (e) {
 
+    console.log(e);
+}
+///이메일 인증
+var login = require('./src/module/login');
+try {
+    login.in(app, connection);
+
+} catch (e) {
+
+    console.log("login error: " + e);
+}
+
+///이메일 인증

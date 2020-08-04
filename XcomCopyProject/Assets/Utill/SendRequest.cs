@@ -9,7 +9,7 @@ public class SendRequest : MonoBehaviour
 {
     void Start()
     {
-        StartCoroutine(GetRequest(SocketIOHelper.SERVERPATH+"/"+SocketEvent.database.ToString()));
+        StartCoroutine(GetRequest(ServerHelper.SERVERPATH+"/"+SocketEvent.database.ToString()));
     }
 
     IEnumerator GetRequest(string uri)
