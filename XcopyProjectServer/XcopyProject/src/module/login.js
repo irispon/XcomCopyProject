@@ -25,9 +25,9 @@ login.in = function (app, connection) {
             connection.query(sql, (error, rows, fields) => {
                 if (error) throw error;
                 string = JSON.stringify(rows);
-                json = JSON.parse(string);
+                //json = JSON.parse(string);
 
-                if (json == '[]') {
+                if (string == '[]') {
                     res.send(false);
                 } else {
 
@@ -35,7 +35,7 @@ login.in = function (app, connection) {
 
                 }
               
-                console.log(json); 
+                console.log(string); 
                 res.end();
               
             });
