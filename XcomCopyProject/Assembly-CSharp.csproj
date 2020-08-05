@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DataBaseManager.cs" />
+    <Compile Include="Assets\DialogManager.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
@@ -130,8 +131,12 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
+    <Compile Include="Assets\ICallback.cs" />
+    <Compile Include="Assets\ICallbackHandler.cs" />
     <Compile Include="Assets\Loader\ProfileLoader.cs" />
-    <Compile Include="Assets\Login.cs" />
+    <Compile Include="Assets\LoginButton.cs" />
+    <Compile Include="Assets\LoginManager.cs" />
+    <Compile Include="Assets\LoginWindow.cs" />
     <Compile Include="Assets\ProfileChace.cs" />
     <Compile Include="Assets\ProfileImageChache.cs" />
     <Compile Include="Assets\Utill\APathFind.cs" />

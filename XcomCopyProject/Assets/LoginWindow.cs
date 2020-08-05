@@ -1,27 +1,48 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using TMPro;
+﻿using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Login : MonoBehaviour
+public class LoginWindow : MonoBehaviour, ICallBackHandler, ICallBack
 {
     [SerializeField]
-    TMP_InputField id, password;
-
+    InputField id, password;
+    [SerializeField]
+    Image loadingIcon;
     // Start is called before the first frame update
 
 
-   public async void Click()
+
+    public void Awake()
     {
-        Task<bool> request = CertificateRequest(ServerHelper.LOGINPATH(), "iris", "t529741");
+        loadingIcon.gameObject.SetActive(false);
+       
+     
+    }
+    public void Start()
+    {
+        gameObject.SetActive(false); 
+    }
+
+    public void Call(string message, ICallBack callback)
+    {
+        if (message.Equals("open"))
+        {
+            gameObject.SetActive(true);
+            callback.Back(message);
+        }
+    }
+
+    public async void Login()
+    {
+        Task<bool> request = CertificateRequest(ServerHelper.LOGINPATH(), id.text, password.text);
         //   Debug.Log("백그라운드 테스트");
         bool login = await request;
-       
+
         if (login)
         {
+            SceneManager.LoadScene("SocketTest");
             Debug.Log("로그인 성공");
 
         }
@@ -30,7 +51,7 @@ public class Login : MonoBehaviour
 
             Debug.Log("비밀번호나 아이디 입력이 잘못되었습니다.");
         }
-      //  Debug.Log("2번째" + jArray.ToString());
+        //  Debug.Log("2번째" + jArray.ToString());
     }
 
     async Task<bool> CertificateRequest(string uri,string id,string password)
@@ -77,5 +98,8 @@ public class Login : MonoBehaviour
 
     }
 
- 
+    public void Back(string message)
+    {
+   
+    }
 }
