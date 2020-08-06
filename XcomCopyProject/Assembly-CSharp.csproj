@@ -131,13 +131,15 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
     <Compile Include="Assets\Loader\ProfileLoader.cs" />
+    <Compile Include="Assets\Login\CreateAccount.cs" />
     <Compile Include="Assets\Login\DialogManager.cs" />
     <Compile Include="Assets\Login\ICallback.cs" />
     <Compile Include="Assets\Login\ICallbackHandler.cs" />
     <Compile Include="Assets\Login\LoginButton.cs" />
     <Compile Include="Assets\Login\LoginManager.cs" />
-    <Compile Include="Assets\Login\LoginMessage.cs" />
     <Compile Include="Assets\Login\LoginWindow.cs" />
+    <Compile Include="Assets\Login\PostMessage.cs" />
+    <Compile Include="Assets\Login\RegisterWindow.cs" />
     <Compile Include="Assets\ProfileChace.cs" />
     <Compile Include="Assets\ProfileImageChache.cs" />
     <Compile Include="Assets\Utill\APathFind.cs" />

@@ -9,22 +9,20 @@ public class Post
 
 
     // Start is called before the first frame update
-    public async Task<string> PostRequest(string uri, string id, string password)
+    public static async Task<string> PostRequest(string uri, WWWForm form)
     {
-        string certification = string.Empty;
+     
 
         Debug.Log(uri);
-        WWWForm wWForm = new WWWForm();
-        wWForm.AddField("id", id);
-        wWForm.AddField("password", password);
-
-        UnityWebRequest uwr = UnityWebRequest.Post(uri, wWForm);
+      
+  
+        UnityWebRequest uwr = UnityWebRequest.Post(uri, form);
 
         uwr.SendWebRequest();
 
         while (!uwr.isDone)
         {
-            await Task.Delay(10);
+            await Task.Delay(100);
             //나중에 변경해야될 코드.(로그인이 안되는 경우)
         }
 
@@ -34,22 +32,17 @@ public class Post
         {
             Debug.Log("Error While Sending: " + uwr.error);
 
-            return "";
+            return PostMessage.serverError.ToString();
         }
         else
         {
             Debug.Log("Received: " + uwr.downloadHandler.text);
 
-            if (uwr.downloadHandler.text.Equals("true"))
-            {
                 return uwr.downloadHandler.text;
-            }
-
-
-
+          
         }
 
-        return "";
+     
 
     }
 }

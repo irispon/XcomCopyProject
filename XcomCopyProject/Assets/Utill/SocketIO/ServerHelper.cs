@@ -20,6 +20,12 @@ public class ServerHelper
         string LOGIN = SERVERPATH + "/" + PostEvent.login;
         return LOGIN;
     }
+    public static string CREATEACCOUNT()
+    {
+
+        string account = SERVERPATH + "/" + PostEvent.account;
+        return account;
+    }
 
 }
 
@@ -30,7 +36,7 @@ public enum SocketEvent
 
 public enum PostEvent
 {
-    certificate, database, login
+    certificate, database, login,account
 }
 public enum ServerEvent
 {

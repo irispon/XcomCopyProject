@@ -48,65 +48,29 @@ public class LoginWindow : SingletonObject<LoginWindow>, ICallBackHandler, ICall
 
     public async void Login()
     {
-        Task<LoginMessage> request = CertificateRequest(ServerHelper.LOGINPATH(), id.text, password.text);
+        WWWForm wWForm = new WWWForm();
+        wWForm.AddField("id", id.text);
+        wWForm.AddField("password", password.text);
+
+        Task<string> request = Post.PostRequest(ServerHelper.LOGINPATH(), wWForm);
         loadingIcon.gameObject.SetActive(true);
-        //   Debug.Log("백그라운드 테스트");
-        LoginMessage login = await request;
-        Debug.Log(login.ToString());
-        DialogManager.GetInstance().Call(login.ToString(), this);
+        string login = await request;
+        Debug.Log(login);
+        if (login.Equals(true))
+        {
+            login = PostMessage.success.ToString();
+        }
+        else if(login.Equals(false))
+        {
+            login = PostMessage.validateError.ToString();
+        }
+        DialogManager.GetInstance().Call(login, this);
         group.alpha = 0.5f;
         group.interactable = false;
 
         //  Debug.Log("2번째" + jArray.ToString());
     }
 
-    async Task<LoginMessage> CertificateRequest(string uri,string id,string password)
-    {
-     
-
-        Debug.Log(uri);
-        WWWForm wWForm = new WWWForm();
-        wWForm.AddField("id", id);
-        wWForm.AddField("password", password);
-
-        UnityWebRequest uwr = UnityWebRequest.Post(uri, wWForm);
-
-        uwr.SendWebRequest();
-   
-        while (!uwr.isDone)
-        {
-          await Task.Delay(10);
-            //나중에 변경해야될 코드.(로그인이 안되는 경우)
-        }
-      
-      
-
-        if (uwr.isNetworkError)
-        {
-            Debug.Log("Error While Sending: " + uwr.error);
-
-            return LoginMessage.serverError;
-        }
-        else
-        {
-            Debug.Log("Received: " + uwr.downloadHandler.text);
-
-            if (uwr.downloadHandler.text.Equals("true"))
-            {
-                return LoginMessage.success;
-            }
-            else if(uwr.downloadHandler.text.Equals("false"))
-            {
-                return LoginMessage.validateError;
-            }
-           
-
-
-        }
-
-        return LoginMessage.serverError;
-
-    }
 
     public void Back(string message)
     {
