@@ -140,3 +140,13 @@ try {
 }
 
 ///이메일 인증
+//가입 인증
+var create_account = require('./src/module/createAccount');
+try {
+    create_account.certification(app, connection);
+
+} catch (e) {
+
+    console.log("login error: " + e);
+}
+//가입인증

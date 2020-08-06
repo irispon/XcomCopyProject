@@ -31,6 +31,10 @@
     <Content Include="config\database_config.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\module\createAccount.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\AccountSucess.html" />
     <Content Include="views\index.html">
       <SubType>Code</SubType>
     </Content>

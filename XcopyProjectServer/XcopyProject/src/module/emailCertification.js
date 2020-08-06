@@ -15,8 +15,8 @@ certification.send = function (app) {
     const smtpTransport = nodemailer.createTransport({
         service: "Gmail",
         auth: {
-            user: "ptlsdnjsdnp@gmail.com",
-            pass: "seven8529741?#@"
+            user: "xcopyproject@gmail.com",
+            pass: "seven8529741"
         },
         tls: {
             rejectUnauthorized: false

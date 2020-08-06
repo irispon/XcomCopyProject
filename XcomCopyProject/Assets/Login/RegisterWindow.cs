@@ -10,7 +10,7 @@ public class RegisterWindow : SingletonObject<RegisterWindow>,ICallBack
     [SerializeField]
     Image loading;
     [SerializeField]
-    InputField userName, password, duplicatePassword, email;
+    InputField email, password, duplicatePassword;
     DialogManager dialog;
     public override void Init()
     {
@@ -39,11 +39,12 @@ public class RegisterWindow : SingletonObject<RegisterWindow>,ICallBack
 
     public async void Request()
     {
+        Debug.Log("리퀘스트 클릭");
         if (password.text.Equals(duplicatePassword.text))
         {
             WWWForm wwform = new WWWForm();
-            wwform.AddField("name", userName.text);
-            wwform.AddField("password", userName.text);
+        //    wwform.AddField("name", userName.text);
+            wwform.AddField("password", password.text);
             wwform.AddField("email", email.text);
 
             group.interactable = false;
