@@ -140,6 +140,7 @@
     <Compile Include="Assets\Login\LoginWindow.cs" />
     <Compile Include="Assets\Login\PostMessage.cs" />
     <Compile Include="Assets\Login\RegisterWindow.cs" />
+    <Compile Include="Assets\PlayerCache.cs" />
     <Compile Include="Assets\ProfileChace.cs" />
     <Compile Include="Assets\ProfileImageChache.cs" />
     <Compile Include="Assets\Utill\APathFind.cs" />
@@ -193,6 +194,7 @@
     <Compile Include="Assets\Utill\List\IListObjectInfo.cs" />
     <Compile Include="Assets\Utill\List\ListManager.cs" />
     <Compile Include="Assets\Utill\List\Option.cs" />
+    <Compile Include="Assets\Utill\Loader\DelegateLoder.cs" />
     <Compile Include="Assets\Utill\Loader\Loader.cs" />
     <Compile Include="Assets\Utill\Loader\TestLoader.cs" />
     <Compile Include="Assets\Utill\MainCamera.cs" />

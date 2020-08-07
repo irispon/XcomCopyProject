@@ -12,7 +12,7 @@ using Newtonsoft.Json.Linq;
 public class ChatManager : SingletonObject<ChatManager>
 {
 
-    public TMP_InputField inputText;
+    public InputField inputText;
     public GameObject contentPanel;
     public ChatObject chatObject;
 
@@ -27,6 +27,7 @@ public class ChatManager : SingletonObject<ChatManager>
             ChatObject chat = Instantiate(chatObject);
             chat.outputText.text = chatMessage[ChatHelper.Message.ToString()].ToString();
             chat.client.text = chatMessage[ChatHelper.Client.ToString()].ToString();
+            Debug.Log(chatMessage[ChatHelper.Profile.ToString()].ToString());
             SizeFitter.FittingContent(chat.gameObject, contentPanel);
         }
         catch (Exception e)

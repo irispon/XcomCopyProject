@@ -9,7 +9,7 @@ public class Post
 
 
     // Start is called before the first frame update
-    public static async Task<string> PostRequest(string uri, WWWForm form)
+    public static async Task<string> PostRequest(string uri, WWWForm form,ICallBack callBack =null)
     {
      
 
@@ -31,18 +31,20 @@ public class Post
         if (uwr.isNetworkError)
         {
             Debug.Log("Error While Sending: " + uwr.error);
-
+            if (callBack != null)
+            callBack.Back(PostEvent.error.ToString());//나중에 enum으로 바꾸자
             return PostMessage.serverError.ToString();
         }
         else
         {
             Debug.Log("Received: " + uwr.downloadHandler.text);
-
-                return uwr.downloadHandler.text;
+            if(callBack!=null)
+            callBack.Back(PostEvent.success.ToString());
+            return uwr.downloadHandler.text;
           
         }
 
-     
+ 
 
     }
 }

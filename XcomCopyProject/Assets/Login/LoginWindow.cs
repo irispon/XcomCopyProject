@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -56,11 +57,13 @@ public class LoginWindow : SingletonObject<LoginWindow>, ICallBackHandler, ICall
         loadingIcon.gameObject.SetActive(true);
         string login = await request;
         Debug.Log(login);
-        if (login.Equals(true))
+        JObject json = JObject.Parse(login);
+        Debug.Log(json+" "+ json["id"]);
+        if (json["id"].ToString().Equals("1"))
         {
             login = PostMessage.success.ToString();
         }
-        else if(login.Equals(false))
+        else if(json["id"].ToString().Equals("0"))
         {
             login = PostMessage.validateError.ToString();
         }
@@ -68,6 +71,7 @@ public class LoginWindow : SingletonObject<LoginWindow>, ICallBackHandler, ICall
         group.alpha = 0.5f;
         group.interactable = false;
 
+        PlayerCache.GetInstance().Set(id.text, json["token"].ToString());
         //  Debug.Log("2번째" + jArray.ToString());
     }
 

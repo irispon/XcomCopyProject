@@ -76,14 +76,15 @@ public class DialogManager : SingletonObject<DialogManager>,ICallBackHandler
     }
     public void Close()
     {
-        Debug.Log("테스트");
+     //   Debug.Log("테스트");
         if(caller!=null)
         caller.Back("close");
         gameObject.SetActive(false);
     }
     void Next()
     {
-        SceneManager.LoadScene("SocketTest");
+        Debug.Log("다음 씬으로");
+        LoadingManager.LoadScene("SocketTest");
     }
     // Start is called before the first frame update
     void Start()

@@ -31,14 +31,15 @@
     <Content Include="config\database_config.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\module\createAccount.js">
+    <Content Include="src\module\create_account.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\module\email_certification.js" />
+    <Content Include="src\module\player_request.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\AccountSucess.html" />
     <Content Include="views\index.html">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\module\emailCertification.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="server.js" />

@@ -36,7 +36,7 @@ public enum SocketEvent
 
 public enum PostEvent
 {
-    certificate, database, login,account
+    certificate, database, login,account,error,success
 }
 public enum ServerEvent
 {
@@ -44,5 +44,5 @@ public enum ServerEvent
 }
 public enum ChatHelper
 {
-    Client,Message,Sprite
+    Client,Message,Profile
 }

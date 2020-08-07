@@ -1,5 +1,5 @@
 
-var certification = require('./src/module/emailCertification');
+var certification = require('./src/module/email_certification');
 var http = require('http');
 var express = require('express');
 var router = express.Router();
@@ -141,7 +141,7 @@ try {
 
 ///이메일 인증
 //가입 인증
-var create_account = require('./src/module/createAccount');
+var create_account = require('./src/module/create_account');
 try {
     create_account.certification(app, connection);
 

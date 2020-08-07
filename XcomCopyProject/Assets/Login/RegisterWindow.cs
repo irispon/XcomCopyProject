@@ -88,6 +88,10 @@ public class RegisterWindow : SingletonObject<RegisterWindow>,ICallBack
         {
             dialog.Call("패스워드 불일치", "패스워드가 불일치합니다.");
         }
+        else if (message.Equals("exist"))
+        {
+            dialog.Call("중복된 아이디", "이미 아이디가 존재합니다.");
+        }
 
     }
 }
