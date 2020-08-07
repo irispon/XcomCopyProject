@@ -27,7 +27,15 @@ public class ChatManager : SingletonObject<ChatManager>
             ChatObject chat = Instantiate(chatObject);
             chat.outputText.text = chatMessage[ChatHelper.Message.ToString()].ToString();
             chat.client.text = chatMessage[ChatHelper.Client.ToString()].ToString();
-            Debug.Log(chatMessage[ChatHelper.Profile.ToString()].ToString());
+            try
+            {
+              chat.profile.sprite=  Resources.Load<Sprite>(chatMessage[ChatHelper.Profile.ToString()].ToString());
+            }
+            catch(Exception e)
+            {
+
+            }
+
             SizeFitter.FittingContent(chat.gameObject, contentPanel);
         }
         catch (Exception e)

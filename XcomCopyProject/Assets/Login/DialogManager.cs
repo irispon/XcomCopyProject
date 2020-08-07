@@ -19,14 +19,14 @@ public class DialogManager : SingletonObject<DialogManager>,ICallBackHandler
     {
         caller = callback;
         gameObject.SetActive(true);
-        if (message.Equals(PostMessage.validateError.ToString()))
+        if (message.Equals(RequestMessage.validateError.ToString()))
         {
             title.text = "LoginError!";
             context.text = "비밀번호나 아이디 입력이 틀렸습니다.";
             Debug.Log("LoginError!");
             action = () => Close();
         }
-        else if (message.Equals(PostMessage.serverError.ToString()))
+        else if (message.Equals(RequestMessage.serverError.ToString()))
         {
             title.text = "ConnectError!";
             context.text = "서버 연결에 실패했습니다.";
@@ -35,7 +35,7 @@ public class DialogManager : SingletonObject<DialogManager>,ICallBackHandler
 
 
         }
-        else if(message.Equals(PostMessage.success.ToString()))
+        else if(message.Equals(RequestMessage.success.ToString()))
         {
             title.text = "LoginSuccess!";
             context.text = "아이디 로그인에 성공하셨습니다.";

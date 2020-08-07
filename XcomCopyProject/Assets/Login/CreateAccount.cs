@@ -9,7 +9,7 @@ public class CreateAccount : MonoBehaviour
     void Create()
     {
         WWWForm form = new WWWForm();
-        Task<string> post = Post.PostRequest(ServerHelper.CREATEACCOUNT(), form);
+        Task<string> post = Request.PostRequest(ServerHelper.CREATEACCOUNT(), form);
 
     }
 

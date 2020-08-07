@@ -150,3 +150,8 @@ try {
     console.log("login error: " + e);
 }
 //가입인증
+
+//플레이어 정보 관련
+
+var player_request = require('./src/module/player_request');
+player_request.requests(app, connection);

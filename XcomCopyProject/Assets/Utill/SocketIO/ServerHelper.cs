@@ -6,6 +6,7 @@ public class ServerHelper
 {
 
     public static string SERVERPATH = "http://122.38.89.43:4444";
+    public static string LOCALPATH = "http://192.168.219.126:4444";//테스트용
  //   public static string DATABASEACESS = SERVERPATH + "/" + PostEvent.database.ToString();
     public static string DATABASEPATH()
     {
@@ -36,7 +37,11 @@ public enum SocketEvent
 
 public enum PostEvent
 {
-    certificate, database, login,account,error,success
+    certificate, database, login,account,error,success,getinfo,setinfo,disconnect
+}
+public enum GetEvent
+{
+    profiles
 }
 public enum ServerEvent
 {
