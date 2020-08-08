@@ -28,6 +28,7 @@ public class PlayerCache : SingletonObject<PlayerCache>
         WWWForm form = new WWWForm();
         form.AddField("id", id);
         form.AddField("token", token);
+        Debug.Log("업데이트 요청" + id+" "+token);
         GetUserData(Request.PostRequest(ServerHelper.SERVERPATH + "/" + PostEvent.getinfo, form));//포스트 설계 바꿔야할듯
         
     }

@@ -8,7 +8,10 @@ ScriptsOnlyBuild:
     - LoadingManager
     - LoginButton
     - LoginWindow
+    - NameChange
     - PlayerCache
+    - ProfileImage
+    - ProfileWindow
     - RegisterWindow
     - SceneLoader
     Unity.Rider.Editor.dll:
@@ -74,23 +77,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 12090}
+      Script: {instanceID: 12092}
     - Class: 114
-      Script: {instanceID: 12238}
+      Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12292}
+      Script: {instanceID: 12294}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 12426}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 13298}
     - Class: 114
-      Script: {instanceID: 13718}
+      Script: {instanceID: 13322}
     - Class: 114
-      Script: {instanceID: 13962}
+      Script: {instanceID: 13730}
     - Class: 114
-      Script: {instanceID: 14306}
+      Script: {instanceID: 13974}
     - Class: 114
-      Script: {instanceID: 40164}
+      Script: {instanceID: 14318}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -98,6 +101,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 223
       Script: {instanceID: 0}
@@ -141,33 +146,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11646}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11814}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 11882}
+      Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12238}
+      Script: {instanceID: 12244}
     - Class: 114
-      Script: {instanceID: 12242}
+      Script: {instanceID: 12974}
     - Class: 114
-      Script: {instanceID: 12966}
+      Script: {instanceID: 13100}
     - Class: 114
-      Script: {instanceID: 13162}
+      Script: {instanceID: 13172}
     - Class: 114
-      Script: {instanceID: 13236}
+      Script: {instanceID: 13246}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 13298}
     - Class: 114
-      Script: {instanceID: 13416}
+      Script: {instanceID: 13428}
     - Class: 114
-      Script: {instanceID: 13612}
+      Script: {instanceID: 13624}
     - Class: 114
-      Script: {instanceID: 13718}
+      Script: {instanceID: 13730}
     - Class: 114
-      Script: {instanceID: 14306}
+      Script: {instanceID: 14318}
     - Class: 114
-      Script: {instanceID: 14330}
+      Script: {instanceID: 14342}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -218,35 +223,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11340}
+      Script: {instanceID: 11342}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11646}
+      Script: {instanceID: 11594}
     - Class: 114
-      Script: {instanceID: 11728}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11814}
+      Script: {instanceID: 11732}
     - Class: 114
-      Script: {instanceID: 12066}
+      Script: {instanceID: 12068}
     - Class: 114
-      Script: {instanceID: 12238}
+      Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12590}
+      Script: {instanceID: 12592}
     - Class: 114
-      Script: {instanceID: 12764}
+      Script: {instanceID: 12596}
     - Class: 114
-      Script: {instanceID: 13236}
+      Script: {instanceID: 12770}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 13100}
     - Class: 114
-      Script: {instanceID: 13612}
+      Script: {instanceID: 13246}
     - Class: 114
-      Script: {instanceID: 13718}
+      Script: {instanceID: 13298}
     - Class: 114
-      Script: {instanceID: 13848}
+      Script: {instanceID: 13340}
     - Class: 114
-      Script: {instanceID: 14306}
+      Script: {instanceID: 13624}
+    - Class: 114
+      Script: {instanceID: 13730}
+    - Class: 114
+      Script: {instanceID: 13860}
+    - Class: 114
+      Script: {instanceID: 14318}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -291,19 +302,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11646}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11814}
+      Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12238}
+      Script: {instanceID: 13100}
     - Class: 114
-      Script: {instanceID: 13718}
+      Script: {instanceID: 13730}
     - Class: 114
-      Script: {instanceID: 13748}
+      Script: {instanceID: 13760}
     - Class: 114
-      Script: {instanceID: 14212}
+      Script: {instanceID: 14224}
     - Class: 114
-      Script: {instanceID: 14306}
+      Script: {instanceID: 14318}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -341,10 +352,10 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+      Hash: 0dbc3be398b4869a5c8d0d8481ee402c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
-    className: VerticalLayoutGroup
+    className: LayoutElement
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -461,6 +472,12 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
+      Hash: 0692acb7b208f218dbb6e6c8f6527506
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProfileWindow
+  - hash:
+      serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -537,12 +554,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 0dbc3be398b4869a5c8d0d8481ee402c
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: LayoutElement
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -737,6 +748,12 @@ ScriptsOnlyBuild:
     className: Sample13_ToDoApp
   - hash:
       serializedVersion: 2
+      Hash: 81c713e9aa8b1a44a3ae2da8de6e2329
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerCache
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UniRx.Triggers
@@ -765,6 +782,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Asset
+  - hash:
+      serializedVersion: 2
+      Hash: 214b1fe213cdb666114d1f8c35d762a5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NameChange
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -857,6 +880,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: postTest
+  - hash:
+      serializedVersion: 2
       Hash: a7389d1b26ee7875578da586acc2d180
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -921,6 +950,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UniRx.Triggers
     className: ObservablePointerDownTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: b6dfcb4b2709d4cc59adfbcdc0360e28
@@ -999,6 +1034,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 525b4a46d132d201570993f6f00de784
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProfileImage
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1353,12 +1394,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: a80aa5c47d55156ec1f9bca59b9ded23
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerCache
   platform: 13
   scenePathNames:
   - Assets/Scenes/Init.unity

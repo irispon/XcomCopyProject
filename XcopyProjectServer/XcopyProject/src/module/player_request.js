@@ -10,57 +10,75 @@ player_request.requests = function (app,connection) {
 
     router.post('/getinfo', function (req, res) {
 
+        try {
+            var sql = 'SELECT u.id,u.name,u.profile FROM USER AS u JOIN auth au ON u.id = au.id WHERE  au.id = ? AND au.token = ?';
+            var par = [req.body.id, req.body.token];
+            console.log(par);
+            connection.query(sql, par, (error, rows, fields) => {
+                console.log(sql);
+                var string = JSON.stringify(rows[0]);
+                console.log(string);
+                res.send(string);
+                res.end();
 
-        var sql = 'SELECT user.id, user.name, user.profile FROM USER, auth WHERE  auth.id = ? AND auth.token = ?';
-        var par = [req.body.id, req.body.token];
-        connection.query(sql, par, (error, rows, fields) => {
+            });
+        } catch (e) {
 
-            var string = JSON.stringify(rows[0]);
-            console.log(string);
-            res.send(string);
-            res.end();
+        }
 
-        });
 
     });
     router.post('/setinfo', function (req, res) {
 
-        var sql = 'UPDATE USER u INNER JOIN auth au ON u.id = au.id SET u.name = ?,u.profile =? WHERE u.id = ? AND au.token = ?';
-        var par = [req.body.name, req.body.profile, req.body.id, req.body.token];
         try {
-            connection.query(sql, par, (error, rows, fields) => {
-                if (error)
-                    res.send('error');
-                console.log(rows);
-                res.end();
+            var sql = 'UPDATE USER u INNER JOIN auth au ON u.id = au.id SET u.name = ?,u.profile =? WHERE u.id = ? AND au.token = ?';
+            var par = [req.body.name, req.body.profile, req.body.id, req.body.token];
 
-            });
+            try {
+                connection.query(sql, par, (error, rows, fields) => {
+                    if (error)
+                        res.send('error');
+                    console.log(rows);
+                    res.end();
+
+                });
 
 
+            } catch (e) {
+
+            }
         } catch (e) {
 
+
         }
+
 
 
     });
 
     router.post('/disconnect', function (req, res) {
-        var sql = 'DELETE FROM auth WHERE id=? AND token =?';
-        par = [req.body.id, req.body.token];
-
         try {
-            connection.query(sql, par, (error, rows, fields) => {
-                if (error)
-                    res.send('error');
-                console.log(rows);
-                res.end();
+            var sql = 'DELETE FROM auth WHERE id=? AND token =?';
+            par = [req.body.id, req.body.token];
 
-            });
+            try {
+                connection.query(sql, par, (error, rows, fields) => {
+                    if (error)
+                        res.send('error');
+                    console.log(rows);
+                    res.end();
+
+                });
 
 
+            } catch (e) {
+                console.log("disconnect"+e);
+            }
         } catch (e) {
 
+            console.log("disconnect"+e);
         }
+
 
     });
 

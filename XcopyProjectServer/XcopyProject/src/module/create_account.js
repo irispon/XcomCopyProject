@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const { connect } = require('net');
+const { cache } = require('ejs');
 var create_account = {};
 
 create_account.certification = function (app, connection) {
@@ -66,8 +67,8 @@ create_account.certification = function (app, connection) {
                         from: 'XcopyProject@gmail.com',
                         to: req.body.email,
                         subject: 'Creat Account Certificate',
-                        html: 'Please select the following address for authentication'
-                            + `local: http://192.168.219.126:4444/account/create/?token=${token}` +
+                        html: 'Please select the following address for authentication\n'
+                            + `local: http://192.168.219.126:4444/account/create/?token=${token}` +'\n'+
                             ` external: http://122.38.89.43:4444/account/create/?token=${token}`
                     };
                     transporter.sendMail(emailOptions, res); //Àü¼Û
@@ -116,27 +117,32 @@ create_account.certification = function (app, connection) {
                 console.log(rows[0]);
             }
 
+            try {
+                var sql = 'INSERT INTO USER(id, PASSWORD) VALUES(?,?)';
+                var par = [rows[0].id, rows[0].password];
+                console.log('parameter' + par);
+                connection.query(sql, par, function (err, rows, fields) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log(rows);
+                        json = JSON.stringify(rows);
 
-            var sql = 'INSERT INTO USER(id, PASSWORD) VALUES(?,?)';
-            var par = [rows[0].id, rows[0].password];
-            console.log('parameter' + par);
-            connection.query(sql, par, function (err, rows, fields) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(rows);
-                    json = JSON.stringify(rows);
+                    }
+                });
 
-                }
-            });
+                var sql = 'DELETE FROM account WHERE token=?';
+                var par = req.query.token;
+                connection.query(sql, par, function (err, rows, fields) {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
+            } catch (e) {
 
-            var sql = 'DELETE FROM account WHERE token=?';
-            var par = req.query.token;
-            connection.query(sql, par, function (err, rows, fields) {
-                if (err) {
-                    console.log(err);
-                }
-            });
+                console.log('error:token end');
+            }
+
 
         });
         res.end();

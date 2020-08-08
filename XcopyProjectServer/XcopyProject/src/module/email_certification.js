@@ -10,8 +10,6 @@ certification.send = function (app) {
 
     // ¼ıÀÚ
 
-
-
     const smtpTransport = nodemailer.createTransport({
         service: "Gmail",
         auth: {
