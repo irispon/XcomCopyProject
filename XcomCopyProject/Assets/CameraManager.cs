@@ -11,14 +11,13 @@ public class CameraManager : SingletonObject<CameraManager>
     Camera subCamera;
     CameraContorler mainContorler;
     CameraContorler subContorler;
-     Queue<GameObject> targets;
-    Queue<GameObject> enemTargets;
+
     bool keyState= true;
     // Start is called before the first frame update
     public override void Init()
     {
      //   subCamera =null;
-        targets = new Queue<GameObject>();
+
 
     }
     public void Start()
@@ -27,62 +26,49 @@ public class CameraManager : SingletonObject<CameraManager>
         subContorler = subCamera.GetComponent<CameraContorler>();
     }
 
+
     public void On(GameObject target)
     {
-       
+        if (mainCamera.enabled == true)
+        {
             mainCamera.enabled = false;
             subCamera.enabled = true;
-            subContorler.SetFocus(target);
-        
+        }
+        else
+        {
+      
+            subCamera.enabled = false;
+        }
 
+            Foucusing(target);
 
 
     }
     public void Off()
     {
-       
-        subCamera.enabled = false;
-        mainCamera.enabled = true;
-        
-        
+        if(subCamera.enabled==true)
+        mainContorler.CamToCam(subCamera);
+
     }
-    public void AddTarget(GameObject target)
+    public void Foucusing(GameObject target)
     {
-        targets.Enqueue(target);
-    }
-    public void FixedUpdate()
-    {
-        if (Input.GetButton("tab"))
+        if (mainCamera.enabled == true)
         {
-      
-            if(targets.Count > 0 && keyState)
-            {
-
-                if (mainCamera.enabled == true )
-                {
-
-                    GameObject target = targets.Dequeue();
-                    mainContorler.SetFocus(target);
-                    targets.Enqueue(target);
-                  //  Debug.Log("tab");
-
-
-                }
-                else if (subCamera.enabled==true)
-                {
-                    GameObject target = targets.Dequeue();
-                    subContorler.SetFocus(target);
-                    targets.Enqueue(target);
-                    Debug.Log("subtab");
-                }
-            }
-
-            keyState = false;
+            subCamera.enabled = false;
+            subContorler.CamToCam(mainCamera, true);
         }
         else
         {
-            keyState = true;
+            subCamera.enabled = true;
+            subContorler.SetFocus(target);
         }
+        mainContorler.SetFocus(target);
+
+    }
+
+    public void FixedUpdate()
+    {
+ 
 
     }
 

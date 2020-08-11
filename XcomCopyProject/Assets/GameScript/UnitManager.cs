@@ -6,14 +6,20 @@ namespace xcopy
 {
     public class UnitManager : SingletonObject<UnitManager>
     {
-       public Dictionary<string, Character> units;
+      // public Dictionary<string, Character> units;
        Character selectUnit;
+       Queue<Character> units;
+       Queue<Character> enemunits;
+       bool keyState = true;
 
         public override void Init()
         {
-            units = new Dictionary<string, Character>();
+       //     units = new Dictionary<string, Character>();
             selectUnit = null;
+            units = new Queue<Character>();
+            enemunits = new Queue<Character>();
         }
+
         public void SelectUnit(Character unit)
         {
 
@@ -26,10 +32,15 @@ namespace xcopy
                 }
                 selectUnit = unit;
                 selectUnit.Select();
-               
+
             }
+
             
 
+        }
+        public void AddUnit(Character unit)
+        {
+            units.Enqueue(unit);
         }
         public void Update()
         {
@@ -39,8 +50,30 @@ namespace xcopy
                 if (h != 0)
                 {
                     selectUnit.DiSelect();
-                    selectUnit = null;
+                    //selectUnit = null;
                 }
+            }
+
+            if (Input.GetButton("tab"))
+            {
+
+                if (units.Count > 0 && keyState)
+                {
+
+                        
+                        Character unit = units.Dequeue();
+                        unit.Select();
+                        selectUnit = unit;
+                        units.Enqueue(unit);
+                        Debug.Log(unit.name);
+
+                }
+
+                keyState = false;
+            }
+            else
+            {
+                keyState = true;
             }
 
 

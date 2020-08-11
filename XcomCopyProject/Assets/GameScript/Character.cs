@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     {
         manager = CameraManager.GetInstance();
         unitManager = UnitManager.GetInstance();
-        manager.AddTarget(gameObject);
+        unitManager.AddUnit(this);
 
 
 
@@ -24,8 +24,8 @@ public class Character : MonoBehaviour
     public void Select()
     {
 
-        
-        manager.On(gameObject);
+        manager.Foucusing(gameObject);
+
     }
     public void DiSelect()
     {
@@ -34,6 +34,7 @@ public class Character : MonoBehaviour
 
     public void OnMouseUpAsButton()
     {
+        manager.On(gameObject);
         unitManager.SelectUnit(this);
     }
 
