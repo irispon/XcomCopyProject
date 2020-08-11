@@ -1,31 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.EventSystems;
 using xcopy;
 
 public class Character : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    Camera subCamera;
+
     CameraManager manager;
     UnitManager unitManager;
-    public void Awake()
-    {
-        subCamera.enabled = false;
-    }
+
     public void Start()
     {
         manager = CameraManager.GetInstance();
         unitManager = UnitManager.GetInstance();
         manager.AddTarget(gameObject);
+
+
+
     }
     public void Select()
     {
 
         
-        manager.On(subCamera);
+        manager.On(gameObject);
     }
     public void DiSelect()
     {
