@@ -63,8 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraManager.cs" />
     <Compile Include="Assets\DataBaseManager.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
+    <Compile Include="Assets\GameScript\Character.cs" />
+    <Compile Include="Assets\GameScript\GameManager.cs" />
+    <Compile Include="Assets\GameScript\UnitManager.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonTypes.cs" />
@@ -174,6 +178,7 @@
     <Compile Include="Assets\Utill\Asset\LightningBolt\LightningBoltScript.cs" />
     <Compile Include="Assets\Utill\BoolParser.cs" />
     <Compile Include="Assets\Utill\CallBack.cs" />
+    <Compile Include="Assets\Utill\Camera\CameraContorler.cs" />
     <Compile Include="Assets\Utill\Camera\CameraResolution.cs" />
     <Compile Include="Assets\Utill\Corrector.cs" />
     <Compile Include="Assets\Utill\DictionaryAccessUtill.cs" />
