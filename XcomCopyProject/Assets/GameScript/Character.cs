@@ -27,15 +27,20 @@ public class Character : MonoBehaviour
         manager.Foucusing(gameObject);
 
     }
+    public void AttackMode()
+    {
+        manager.On(gameObject);
+        unitManager.SelectUnit(this);
+    }
     public void DiSelect()
     {
         manager.Off();
     }
 
+
     public void OnMouseUpAsButton()
     {
-        manager.On(gameObject);
-        unitManager.SelectUnit(this);
+
     }
 
     public void OnMouseEnter()
@@ -48,4 +53,5 @@ public class Character : MonoBehaviour
     {
         Debug.Log("강조선 끄기");
     }
+
 }

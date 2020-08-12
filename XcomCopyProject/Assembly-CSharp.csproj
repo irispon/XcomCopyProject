@@ -68,6 +68,7 @@
     <Compile Include="Assets\GPGSIds.cs" />
     <Compile Include="Assets\GameScript\Character.cs" />
     <Compile Include="Assets\GameScript\GameManager.cs" />
+    <Compile Include="Assets\GameScript\Move.cs" />
     <Compile Include="Assets\GameScript\UnitManager.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
@@ -158,7 +159,6 @@
     <Compile Include="Assets\Scripts\Tank\TankMovement.cs" />
     <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />
     <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\DissolveOverTime.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\ExampleReview.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\FreeCameraMovement.cs" />

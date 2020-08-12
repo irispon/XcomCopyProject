@@ -11,7 +11,7 @@ namespace xcopy
        List<Character> units;
        Queue<Character> enemunits;
         int index = -1;
-       bool keyState = true;
+
 
         public override void Init()
         {
@@ -56,10 +56,10 @@ namespace xcopy
                 }
             }
 
-            if (Input.GetButton("tab"))
+            if (Input.GetButtonUp("tab"))
             {
 
-                if (units.Count > 0 && keyState)
+                if (units.Count > 0)
                 {
                     index++;
            
@@ -75,11 +75,13 @@ namespace xcopy
 
                 }
 
-                keyState = false;
-            }
-            else
+         
+            }else if (Input.GetButtonUp("one"))
             {
-                keyState = true;
+                if (selectUnit == null&&units.Count>0)
+                    selectUnit = units[index];
+                selectUnit.AttackMode();
+
             }
 
 
