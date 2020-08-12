@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
     }
     public void Select()
     {
-
+        Debug.Log(name);
         manager.Foucusing(gameObject);
 
     }

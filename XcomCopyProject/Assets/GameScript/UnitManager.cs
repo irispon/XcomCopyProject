@@ -8,15 +8,16 @@ namespace xcopy
     {
       // public Dictionary<string, Character> units;
        Character selectUnit;
-       Queue<Character> units;
+       List<Character> units;
        Queue<Character> enemunits;
+        int index = -1;
        bool keyState = true;
 
         public override void Init()
         {
        //     units = new Dictionary<string, Character>();
             selectUnit = null;
-            units = new Queue<Character>();
+            units = new List<Character>();
             enemunits = new Queue<Character>();
         }
 
@@ -32,7 +33,8 @@ namespace xcopy
                 }
                 selectUnit = unit;
                 selectUnit.Select();
-
+                index= units.IndexOf(selectUnit);
+                Debug.Log("인덱스" + index);
             }
 
             
@@ -40,7 +42,7 @@ namespace xcopy
         }
         public void AddUnit(Character unit)
         {
-            units.Enqueue(unit);
+            units.Add(unit);
         }
         public void Update()
         {
@@ -59,13 +61,17 @@ namespace xcopy
 
                 if (units.Count > 0 && keyState)
                 {
-
-                        
-                        Character unit = units.Dequeue();
-                        unit.Select();
-                        selectUnit = unit;
-                        units.Enqueue(unit);
-                        Debug.Log(unit.name);
+                    index++;
+           
+                    if (index >= units.Count)
+                    {
+                        index = 0;
+                    }
+                    Debug.Log("인덱스" + index);
+                    selectUnit = units[index];
+                    selectUnit.Select();
+             
+                  
 
                 }
 
