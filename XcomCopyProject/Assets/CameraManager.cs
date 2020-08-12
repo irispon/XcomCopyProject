@@ -6,9 +6,9 @@ using Utill;
 public class CameraManager : SingletonObject<CameraManager>
 {
     [SerializeField]
-    Camera mainCamera;
+    public Camera mainCamera;
     [SerializeField]
-    Camera subCamera;
+    public Camera subCamera;
     CameraContorler mainContorler;
     CameraContorler subContorler;
 
