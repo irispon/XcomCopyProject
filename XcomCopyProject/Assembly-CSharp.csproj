@@ -67,6 +67,7 @@
     <Compile Include="Assets\DataBaseManager.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
     <Compile Include="Assets\GameScript\Character.cs" />
+    <Compile Include="Assets\GameScript\CharacterStatus.cs" />
     <Compile Include="Assets\GameScript\GameManager.cs" />
     <Compile Include="Assets\GameScript\Move.cs" />
     <Compile Include="Assets\GameScript\UnitManager.cs" />

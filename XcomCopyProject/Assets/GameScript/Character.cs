@@ -11,6 +11,9 @@ public class Character : MonoBehaviour
 
     CameraManager manager;
     UnitManager unitManager;
+    public CharacterStatus status;
+    [HideInInspector]
+    public bool attackMode;
 
     public void Start()
     {
@@ -25,12 +28,14 @@ public class Character : MonoBehaviour
     {
         Debug.Log(name);
         manager.Foucusing(gameObject);
+        Move.GetInstance().GetTurn(this);
 
     }
     public void AttackMode()
     {
         manager.On(gameObject);
         unitManager.SelectUnit(this);
+        attackMode = true;
     }
     public void DiSelect()
     {
