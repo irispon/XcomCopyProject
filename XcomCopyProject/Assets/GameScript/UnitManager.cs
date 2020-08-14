@@ -10,6 +10,8 @@ namespace xcopy
        Character selectUnit;
        List<Character> units;
        Queue<Character> enemunits;
+        public bool attackMode = false;
+
         int index = -1;
 
 
@@ -28,13 +30,15 @@ namespace xcopy
             {
                 if (selectUnit != null)
                 {
-                    selectUnit.DiSelect();
                    
+                    selectUnit.DiSelect();
+                    
                 }
                 selectUnit = unit;
+
                 selectUnit.Select();
                 index= units.IndexOf(selectUnit);
-                Debug.Log("인덱스" + index);
+           
             }
 
             
@@ -52,7 +56,10 @@ namespace xcopy
                 if (h != 0)
                 {
                     selectUnit.DiSelect();
+                 
                     //selectUnit = null;
+                    if (attackMode==true)
+                    attackMode = false;
                 }
             }
 
@@ -81,7 +88,8 @@ namespace xcopy
                 if (selectUnit == null&&units.Count>0)
                     selectUnit = units[index];
                 selectUnit.AttackMode();
-
+                if (attackMode == false&&!selectUnit.moving)
+                    attackMode = true;
             }
 
 

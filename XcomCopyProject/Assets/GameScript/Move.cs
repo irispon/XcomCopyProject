@@ -51,15 +51,16 @@ public class Move : SingletonObject<Move>
     public IEnumerator MoveTurn(Character unit)
     {
         
-        while (true&&unit.status.movePoint>0&& unit.attackMode==false)
+        while (true&&unit.status.movePoint>0)
         {
             range = unit.status.moveRange;
             moveRange.rectTransform.sizeDelta = new Vector2(range * 2, range * 2);
-            if (CameraManager.GetInstance().mainCamera == true&&unit.moving==false)
+            if (CameraManager.GetInstance().mainCamera == true&&unit.moving==false&&!unit.IsAttackMode())
             {
      
                     destiCanvas.enabled = true;
                     moveRange.enabled = true;
+
 
 
                 ray = mainCamera.ScreenPointToRay(Input.mousePosition);

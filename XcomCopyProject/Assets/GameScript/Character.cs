@@ -20,7 +20,6 @@ public class Character : MonoBehaviour
     UnitManager unitManager;
     public CharacterStatus status;
     [HideInInspector]
-    public bool attackMode;
     public bool moving;
     IEnumerator move;
 
@@ -34,9 +33,13 @@ public class Character : MonoBehaviour
         manager = CameraManager.GetInstance();
         unitManager = UnitManager.GetInstance();
         unitManager.AddUnit(this);
-     
+        animator.SetBool("Rest", true);
+        animator.speed = 1;
 
-
+    }
+    public bool IsAttackMode()
+    {
+        return unitManager.attackMode;
     }
     public void Select()
     {
@@ -51,13 +54,14 @@ public class Character : MonoBehaviour
         {
             manager.On(gameObject);
             unitManager.SelectUnit(this);
-            attackMode = true;
+          
         }
 
     }
     public void DiSelect()
     {
         manager.Off();
+
     }
     public void MoveTo(Vector3 position)
     {
@@ -77,26 +81,31 @@ public class Character : MonoBehaviour
 
     IEnumerator MoveCorutine(Vector3 position)
     {
-        Vector3 focuseRotation;
+        Vector3 direction;
+        Quaternion quaternion;
         moving = true;
         while (true)
         {
             if (Vector3.Distance(transform.position, position) > 0.1)
             {
-               // focuseRotation = Vector3.Cross(Vector3.up, transform.position-position);
+                animator.SetBool("Rest", false);
+                direction = position - transform.position;
+                quaternion = Quaternion.LookRotation(direction);
                 animator.SetFloat("Speed", 1);
                 animator.speed = 1.2f;
                 currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
                 transform.position = Vector3.MoveTowards(transform.position, position, Time.deltaTime * 2);
-                //transform.eulerAngles = focuseRotation;
+                transform.rotation = quaternion;
 
             }
             else
             {
                 animator.SetFloat("Speed", 0);
-                animator.speed = 0f;
+  
+               // animator.speed = 0f;
                 transform.position = position;
                 moving = false;
+                animator.SetBool("Rest", true);
                 break;
             }
 
