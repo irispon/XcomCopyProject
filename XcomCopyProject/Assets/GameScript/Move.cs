@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class Move : SingletonObject<Move>
     float range;
     public Image moveRange;
     public Vector3 position;
-    public Camera mainCamera;
+    Camera mainCamera;
     public Canvas destiCanvas;
     RaycastHit hit;
     Ray ray;
@@ -30,16 +31,18 @@ public class Move : SingletonObject<Move>
     /// 
     void Set(Character unit)
     {
+  
+        Debug.Log(unit.name);
         transform.SetParent(unit.transform);
         transform.localPosition = new Vector3(0, 0, 0);
         range = unit.status.moveRange;
         moveRange.rectTransform.sizeDelta = new Vector2(range * 2, range * 2);
-        gameObject.SetActive(true);
+  
     }
     public void GetTurn(Character unit)
     {
         Set(unit);
-
+        gameObject.SetActive(true);
         if (move != null)
             StopCoroutine(move);
         move = MoveTurn(unit);
@@ -50,17 +53,17 @@ public class Move : SingletonObject<Move>
         
         while (true&&unit.status.movePoint>0&& unit.attackMode==false)
         {
-            if (CameraManager.GetInstance().mainCamera == true)
+            range = unit.status.moveRange;
+            moveRange.rectTransform.sizeDelta = new Vector2(range * 2, range * 2);
+            if (CameraManager.GetInstance().mainCamera == true&&unit.moving==false)
             {
-                if (destiCanvas == false)
-                {
+     
                     destiCanvas.enabled = true;
                     moveRange.enabled = true;
-                }
 
 
                 ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-                Debug.Log("Input.mousePosition: " + Input.mousePosition);
+               // Debug.Log("Input.mousePosition: " + Input.mousePosition);
                 ////Ability 1 Inputs
                 //if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 //{
@@ -108,18 +111,26 @@ public class Move : SingletonObject<Move>
 
 
                 destiCanvas.transform.position = (newHitPos);
-                Debug.Log("최종값"+newHitPos);
+                // Debug.Log("최종값"+newHitPos);
+                if (Input.GetMouseButtonDown(1))
+                {
+                    unit.status.movePoint -= 1;
+                    //이 부분에 움직이는 거 넣어주면 될듯
+                    unit.MoveTo(newHitPos);
+                }
 
             }
             else
             {
-                if (destiCanvas == true)
-                {
+               
                     destiCanvas.enabled = false;
                     moveRange.enabled = false;
-                }
+                
 
             }
+
+
+
             yield return new WaitForFixedUpdate();
 
         }

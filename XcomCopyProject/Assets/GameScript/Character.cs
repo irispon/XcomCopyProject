@@ -1,26 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.EventSystems;
 using xcopy;
 
+[RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
     // Start is called before the first frame update
+ 
+    Animator animator;
+    AnimatorStateInfo currentBaseState;
+    Vector3 velocity;
+    public bool useCurves = true;
 
     CameraManager manager;
     UnitManager unitManager;
     public CharacterStatus status;
     [HideInInspector]
     public bool attackMode;
+    public bool moving;
+    IEnumerator move;
 
+    public void Awake()
+    {
+        animator = GetComponent<Animator>();
+
+    }
     public void Start()
     {
         manager = CameraManager.GetInstance();
         unitManager = UnitManager.GetInstance();
         unitManager.AddUnit(this);
-
+     
 
 
     }
@@ -33,16 +47,65 @@ public class Character : MonoBehaviour
     }
     public void AttackMode()
     {
-        manager.On(gameObject);
-        unitManager.SelectUnit(this);
-        attackMode = true;
+        if (moving == false)
+        {
+            manager.On(gameObject);
+            unitManager.SelectUnit(this);
+            attackMode = true;
+        }
+
     }
     public void DiSelect()
     {
         manager.Off();
     }
+    public void MoveTo(Vector3 position)
+    {
+
+        if (moving == false)
+        {
+            if (move != null)
+            {
+                StopCoroutine(move);
+            }
+            move = MoveCorutine(position);
+            StartCoroutine(move);
+        }
 
 
+    }
+
+    IEnumerator MoveCorutine(Vector3 position)
+    {
+        Vector3 focuseRotation;
+        moving = true;
+        while (true)
+        {
+            if (Vector3.Distance(transform.position, position) > 0.1)
+            {
+               // focuseRotation = Vector3.Cross(Vector3.up, transform.position-position);
+                animator.SetFloat("Speed", 1);
+                animator.speed = 1.2f;
+                currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
+                transform.position = Vector3.MoveTowards(transform.position, position, Time.deltaTime * 2);
+                //transform.eulerAngles = focuseRotation;
+
+            }
+            else
+            {
+                animator.SetFloat("Speed", 0);
+                animator.speed = 0f;
+                transform.position = position;
+                moving = false;
+                break;
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
+   
+
+
+    }
     public void OnMouseUpAsButton()
     {
 

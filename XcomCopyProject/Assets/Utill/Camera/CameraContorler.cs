@@ -7,12 +7,9 @@ namespace Utill
 {
     public class CameraContorler :MonoBehaviour
     {
-        public float fiexdZ;
-        public float fiexdY;
-        public float fiexdX;
-        public float fiexdRotationX;
-        public float fiexdRotationY;
-        public float fiexdRotationZ;
+        public Vector3 fiexRoation;
+        public Vector3 fiexPosition;
+        public float cameraSpeed;
         Camera mainCamera;
 
         IEnumerator focusing;
@@ -20,14 +17,16 @@ namespace Utill
         {
             mainCamera = GetComponent<Camera>();
         }
-        public void SetFocus(GameObject focuse,Action callBack=null)
+        public void SetFocus(GameObject focuse,Action callBack=null,bool rotateFollow=false)
         {
+           
+          
 
             if (focusing != null)
             {
                 StopCoroutine(focusing);
             }
-            focusing = Focusing(focuse, callBack);
+            focusing = Focusing(focuse, rotateFollow, callBack:callBack);
             StartCoroutine(focusing);
 
         }
@@ -43,20 +42,27 @@ namespace Utill
             StartCoroutine(focusing);
 
         }
-        private IEnumerator Focusing(GameObject focuse, Action callBack = null)
+        private IEnumerator Focusing(GameObject focuse, bool rotateFollow=false,Action callBack = null)
         {
+            
             Vector3 focusePosition;
             Vector3 focuseRotation;
+            Vector3 direction;
             while (true)
             {
-                focusePosition = focuse.transform.position + new Vector3(fiexdX, fiexdY, fiexdZ);
-                focuseRotation = focuse.transform.rotation.eulerAngles + new Vector3(fiexdRotationX, fiexdRotationY,fiexdRotationZ);
+                direction = (transform.position - focuse.transform.position).normalized;
+
+                focusePosition = focuse.transform.position + fiexPosition;
+                focuseRotation = Vector3.Cross(Vector3.up,direction) + fiexRoation+focuse.transform.eulerAngles;
 
 
                 if ((focuse.transform.position != mainCamera.transform.position) || (focuse.transform.rotation.eulerAngles == transform.rotation.eulerAngles))
                 {
                     transform.position = Vector3.Lerp(transform.position, focusePosition, Time.deltaTime * 2f);
+
+                    if(rotateFollow)
                     transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.Euler(focuseRotation), Time.deltaTime * 2f);
+
                     yield return new WaitForFixedUpdate();
                 }
                 else
@@ -70,6 +76,52 @@ namespace Utill
 
 
         }
+        public void Attach(GameObject focuse, Action callBack = null, bool rotateFollow = false)
+        {
+            transform.SetParent(focuse.transform);
+            if (focusing != null)
+            {
+                StopCoroutine(focusing);
+            }
+            focusing = AttachFocus(focuse, rotateFollow, callBack: callBack);
+            StartCoroutine(focusing);
+        }
+
+        private IEnumerator AttachFocus(GameObject focuse, bool rotateFollow = false, Action callBack = null)
+        {
+
+            Vector3 focusePosition;
+            Vector3 focuseRotation;
+
+            while (true)
+            {
+          
+
+                focusePosition = new Vector3(0,0,0) + fiexPosition;
+                focuseRotation =new Vector3(0,0,0)+fiexRoation;
+
+
+                if ((focuse.transform.position != mainCamera.transform.position) || (focuse.transform.rotation.eulerAngles == transform.rotation.eulerAngles))
+                {
+                    transform.localPosition = Vector3.Lerp(transform.localPosition, focusePosition, Time.deltaTime * 2f);
+
+                    if (rotateFollow)
+                        transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(focuseRotation), Time.deltaTime * 2f);
+
+                    yield return new WaitForFixedUpdate();
+                }
+                else
+                {
+                    if (callBack != null)
+                        callBack();
+                    yield break;
+                }
+
+            }
+
+
+        }
+
         private IEnumerator CameraToCamera(Camera camera,bool shadow=false)
         {
             if (shadow == false)

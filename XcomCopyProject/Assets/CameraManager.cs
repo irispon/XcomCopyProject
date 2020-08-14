@@ -60,7 +60,7 @@ public class CameraManager : SingletonObject<CameraManager>
         else
         {
             subCamera.enabled = true;
-            subContorler.SetFocus(target);
+            subContorler.Attach(target, rotateFollow: true);
         }
         mainContorler.SetFocus(target);
 
