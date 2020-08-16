@@ -19,6 +19,7 @@ public class Character : MonoBehaviour
     CameraManager manager;
     UnitManager unitManager;
     public CharacterStatus status;
+    public Weapon weapon;
     [HideInInspector]
     public bool moving;
     IEnumerator move;
@@ -114,6 +115,11 @@ public class Character : MonoBehaviour
    
 
 
+    }
+
+    public void GetDamage(int damage)
+    {
+        status.hp -= damage; 
     }
     public void OnMouseUpAsButton()
     {

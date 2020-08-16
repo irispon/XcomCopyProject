@@ -65,12 +65,16 @@
   <ItemGroup>
     <Compile Include="Assets\CameraManager.cs" />
     <Compile Include="Assets\DataBaseManager.cs" />
+    <Compile Include="Assets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\CameraController.cs" />
+    <Compile Include="Assets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\IdleChanger.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
     <Compile Include="Assets\GameScript\Character.cs" />
     <Compile Include="Assets\GameScript\CharacterStatus.cs" />
     <Compile Include="Assets\GameScript\GameManager.cs" />
     <Compile Include="Assets\GameScript\Move.cs" />
+    <Compile Include="Assets\GameScript\Projectile.cs" />
     <Compile Include="Assets\GameScript\UnitManager.cs" />
+    <Compile Include="Assets\GameScript\Weapon.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonTypes.cs" />
@@ -263,6 +267,10 @@
     <Compile Include="Assets\Utill\WJsonUtill.cs" />
     <Compile Include="Assets\Utill\WList.cs" />
     <Compile Include="Assets\Utill\XMLManager.cs" />
+    <Compile Include="Assets\Yurowm\Demo\Scripts\Actions.cs" />
+    <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterPanel.cs" />
+    <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterViewer.cs" />
+    <Compile Include="Assets\Yurowm\Demo\Scripts\PlayerController.cs" />
     <Compile Include="Assets\_Completed-Assets\Scripts\Camera\CameraControl.cs" />
     <Compile Include="Assets\_Completed-Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\_Completed-Assets\Scripts\Managers\TankManager.cs" />
@@ -271,6 +279,7 @@
     <Compile Include="Assets\_Completed-Assets\Scripts\Tank\TankMovement.cs" />
     <Compile Include="Assets\_Completed-Assets\Scripts\Tank\TankShooting.cs" />
     <Compile Include="Assets\_Completed-Assets\Scripts\UI\UIDirectionControl.cs" />
+    <Compile Include="Assets\_Creepy_Cat\3D Games Effects Pack Free\Example_02\InstanceExample.cs" />
     <Compile Include="Assets\postTest.cs" />
     <Compile Include="Assets\unitchanTest.cs" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -280,6 +289,7 @@
     <None Include="Assets\Ultimate 10 Plus Shaders\Shaders\Grass Sway.shader" />
     <None Include="Assets\Ultimate 10 Plus Shaders\Shaders\Blur.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+    <None Include="Assets\Yurowm\Shaders\SkinShader.shader" />
     <None Include="Assets\Utill\Asset\LightningBolt\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Fonts\Bowlby_One\FontLicense.txt" />
@@ -290,6 +300,7 @@
     <None Include="Assets\Tanks!_Third-PartyNotice.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\JsonDotNet\link.xml" />
+    <None Include="Assets\_Creepy_Cat\3D Games Effects Pack Free\Example_02\Help Readme SOS.txt" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
     <None Include="Assets\Ultimate 10 Plus Shaders\Shaders\Depth Mask Edge Detection.shader" />
@@ -312,6 +323,7 @@
     <None Include="Assets\Ultimate 10 Plus Shaders\Shaders\Lava3D.shader" />
     <None Include="Assets\Ultimate 10 Plus Shaders\Shaders\Force Field.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+    <None Include="Assets\_Creepy_Cat\3D Games Effects Pack Free\_FAQ - Informations\Help Readme SOS.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\UnityChan\Stage\Shader\AlphaMask.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
