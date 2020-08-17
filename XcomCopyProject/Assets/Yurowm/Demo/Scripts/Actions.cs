@@ -2,30 +2,32 @@
 using System.Collections;
 
 [RequireComponent (typeof (Animator))]
-public class Actions : MonoBehaviour {
+public class Actions  {
 
 	private Animator animator;
 
 	const int countOfDamageAnimations = 3;
 	int lastDamageAnimation = -1;
 
-	void Awake () {
-		animator = GetComponent<Animator> ();
-	}
+	public Actions(Animator animator)
+    {
+
+		this.animator = animator;
+    }
 
 	public void Stay () {
 		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 0f);
+	//	animator.SetFloat ("Speed", 0f);
 		}
 
 	public void Walk () {
 		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 0.5f);
+	//	animator.SetFloat ("Speed", 0.5f);
 	}
 
 	public void Run () {
 		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 1f);
+	//	animator.SetFloat ("Speed", 1f);
 	}
 
 	public void Attack () {

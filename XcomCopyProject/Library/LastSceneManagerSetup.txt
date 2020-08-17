@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/_Complete-Game.unity
+- path: Assets/Yurowm/Demo/Demo Sci-Fi Soldier.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

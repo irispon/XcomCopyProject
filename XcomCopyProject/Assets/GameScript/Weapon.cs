@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public WeaponStatus weapon;
+   
     public bool Shoot(Character target)
     {
         if (weapon.magazine > 0)
@@ -32,5 +33,5 @@ public struct WeaponStatus
 }
 public enum WeaponType
 {
-    Sword,Gun
+    Sword,Gun,Melee
 }

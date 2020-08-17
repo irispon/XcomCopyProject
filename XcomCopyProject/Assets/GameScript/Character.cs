@@ -10,24 +10,33 @@ using xcopy;
 public class Character : MonoBehaviour
 {
     // Start is called before the first frame update
- 
+    //[SerializeFields]
+    public CharacterStatus status;
+    public Weapon weapon;
+    public Transform righttHand;
+    public Transform leftHand;
+    public ActionState state;
+
     Animator animator;
-    AnimatorStateInfo currentBaseState;
-    Vector3 velocity;
-    public bool useCurves = true;
 
     CameraManager manager;
     UnitManager unitManager;
-    public CharacterStatus status;
-    public Weapon weapon;
+
+
+
     [HideInInspector]
     public bool moving;
     IEnumerator move;
 
+    Actions actions;
+
+
+
     public void Awake()
     {
         animator = GetComponent<Animator>();
-
+        actions = new Actions(animator);
+        animator.runtimeAnimatorController = AnimatorControler.GetInstance().animations[weapon.weapon.type];
     }
     public void Start()
     {
@@ -94,7 +103,7 @@ public class Character : MonoBehaviour
                 quaternion = Quaternion.LookRotation(direction);
                 animator.SetFloat("Speed", 1);
                 animator.speed = 1.2f;
-                currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
+             //   currentBaseState = animator.GetCurrentAnimatorStateInfo(0);
                 transform.position = Vector3.MoveTowards(transform.position, position, Time.deltaTime * 2);
                 transform.rotation = quaternion;
 
@@ -136,5 +145,11 @@ public class Character : MonoBehaviour
     {
         Debug.Log("강조선 끄기");
     }
+
+  
+    
+}
+enum ActionState
+{
 
 }

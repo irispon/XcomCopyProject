@@ -58,7 +58,7 @@ public class CharacterPanel : MonoBehaviour {
 
 	void CreateActionButton(string name, string message) {
 		Button button = CreateButton (name, actionsPanel);
-		button.onClick.AddListener(() => actions.SendMessage(message, SendMessageOptions.DontRequireReceiver));
+	//	button.onClick.AddListener(() => actions.SendMessage(message, SendMessageOptions.DontRequireReceiver));
 	}
 
 	void CreateCameraButton (Camera c) {

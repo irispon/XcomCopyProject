@@ -68,6 +68,7 @@
     <Compile Include="Assets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\CameraController.cs" />
     <Compile Include="Assets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\IdleChanger.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
+    <Compile Include="Assets\GameScript\AnimatorControler.cs" />
     <Compile Include="Assets\GameScript\Character.cs" />
     <Compile Include="Assets\GameScript\CharacterStatus.cs" />
     <Compile Include="Assets\GameScript\GameManager.cs" />
