@@ -11,17 +11,17 @@ public class AnimatorControler : SingletonObject<AnimatorControler>
     public Dictionary<WeaponType, RuntimeAnimatorController> animations;
     public override void Init()
     {
-       
-    }
-    void Start()
-    {
         animations = new Dictionary<WeaponType, RuntimeAnimatorController>();
-        foreach(AnimatiorInfo animator in animators)
+        foreach (AnimatiorInfo animator in animators)
         {
             animations.Add(animator.name, animator.controller);
 
         }
         animators = null;
+    }
+    void Start()
+    {
+
     }
 
     // Update is called once per frame

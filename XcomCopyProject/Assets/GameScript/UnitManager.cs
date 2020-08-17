@@ -53,7 +53,7 @@ namespace xcopy
             if (selectUnit != null)
             {
                 float h = Input.GetAxis("escape");
-                if (h != 0)
+                if (h != 0&&!selectUnit.ablityMode)
                 {
                     selectUnit.DiSelect();
                  
@@ -61,35 +61,56 @@ namespace xcopy
                     if (attackMode==true)
                     attackMode = false;
                 }
-            }
-
+            }//스택으로 명령을 기억해놨어야 했음.
+            
             if (Input.GetButtonUp("tab"))
             {
 
                 if (units.Count > 0)
                 {
-                    index++;
-           
-                    if (index >= units.Count)
+
+                    if (selectUnit != null && !selectUnit.ablityMode)
                     {
-                        index = 0;
+                        index++;
+
+                        if (index >= units.Count)
+                        {
+                            index = 0;
+                        }
+
+                        selectUnit.isSelect = false;
+                        selectUnit = units[index];
+                        selectUnit.Select();
+                    }else if (selectUnit == null)
+                    {
+                        index++;
+
+                        if (index >= units.Count)
+                        {
+                            index = 0;
+                        }
+
+                        selectUnit = units[index];
+                        selectUnit.Select();
                     }
-                    Debug.Log("인덱스" + index);
-                    selectUnit = units[index];
-                    selectUnit.Select();
+ 
+
              
                   
 
                 }
 
          
-            }else if (Input.GetButtonUp("one"))
+            }else if (Input.GetButtonUp("one") && !selectUnit.ablityMode)
             {
                 if (selectUnit == null&&units.Count>0)
                     selectUnit = units[index];
                 selectUnit.AttackMode();
-                if (attackMode == false&&!selectUnit.moving)
+                if (attackMode == false && !selectUnit.moving)
+                {
                     attackMode = true;
+
+                }
             }
 
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ public class Weapon : MonoBehaviour
     }
 
 }
-[SerializeField]
+[Serializable]
 public struct WeaponStatus
 {
     public WeaponType type;

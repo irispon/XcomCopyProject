@@ -32,7 +32,7 @@ public class Move : SingletonObject<Move>
     void Set(Character unit)
     {
   
-        Debug.Log(unit.name);
+       // Debug.Log(unit.name);
         transform.SetParent(unit.transform);
         transform.localPosition = new Vector3(0, 0, 0);
         range = unit.status.moveRange;
@@ -140,10 +140,4 @@ public class Move : SingletonObject<Move>
 
     }
 
-    void Update()
-    {
-
-       
-
-    }
 }

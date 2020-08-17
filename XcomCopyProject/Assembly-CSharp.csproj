@@ -68,6 +68,7 @@
     <Compile Include="Assets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\CameraController.cs" />
     <Compile Include="Assets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\IdleChanger.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
+    <Compile Include="Assets\GameScript\Ablity.cs" />
     <Compile Include="Assets\GameScript\AnimatorControler.cs" />
     <Compile Include="Assets\GameScript\Character.cs" />
     <Compile Include="Assets\GameScript\CharacterStatus.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Assets\Scripts\Tank\TankMovement.cs" />
     <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />
     <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />
+    <Compile Include="Assets\TargetIndecator.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\DissolveOverTime.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\ExampleReview.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\FreeCameraMovement.cs" />

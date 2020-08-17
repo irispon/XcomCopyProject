@@ -8,16 +8,18 @@ public class Actions  {
 
 	const int countOfDamageAnimations = 3;
 	int lastDamageAnimation = -1;
+	AnimationState state;
 
 	public Actions(Animator animator)
     {
 
 		this.animator = animator;
+
     }
 
 	public void Stay () {
 		animator.SetBool("Aiming", false);
-	//	animator.SetFloat ("Speed", 0f);
+		animator.SetFloat ("Speed", 0f);
 		}
 
 	public void Walk () {
@@ -27,12 +29,13 @@ public class Actions  {
 
 	public void Run () {
 		animator.SetBool("Aiming", false);
-	//	animator.SetFloat ("Speed", 1f);
+     	animator.SetFloat ("Speed", 1f);
 	}
 
 	public void Attack () {
-		Aiming ();
+		Aiming();
 		animator.SetTrigger ("Attack");
+		Stay();
 	}
 
 	public void Death () {
