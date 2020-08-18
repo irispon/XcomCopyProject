@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRange: {fileID: 322348807}
-  position: {x: 0, y: 0, z: 0}
+  position: {x: 0, y: 0.5, z: 0}
   destiCanvas: {fileID: 799164533}
 --- !u!1 &799164532
 GameObject:

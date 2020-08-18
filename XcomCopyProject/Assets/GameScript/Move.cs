@@ -35,6 +35,7 @@ public class Move : SingletonObject<Move>
        // Debug.Log(unit.name);
         transform.SetParent(unit.transform);
         transform.localPosition = new Vector3(0, 0, 0);
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
         range = unit.status.moveRange;
         moveRange.rectTransform.sizeDelta = new Vector2(range * 2, range * 2);
   

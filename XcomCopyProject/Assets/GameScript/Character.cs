@@ -107,7 +107,7 @@ public class Character : MonoBehaviour
     IEnumerator MoveCorutine(Vector3 position)
     {
         Vector3 direction;
-        Quaternion quaternion;
+        Quaternion quaternion = default;
         moving = true;
         while (true)
         {
@@ -133,8 +133,8 @@ public class Character : MonoBehaviour
 
             yield return new WaitForFixedUpdate();
         }
-
-
+        if (quaternion != null)
+            transform.rotation = Quaternion.Euler(quaternion.eulerAngles-new Vector3(quaternion.eulerAngles.x,0,0));
 
     }
     IEnumerator QuaternionCorutine(Quaternion quaternion)
