@@ -13,7 +13,6 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     //[SerializeFields]
     public CharacterStatus status;
-    public Weapon weapon;
     public Transform righttHand;
     public Transform leftHand;
     public List<Ablity> ablities;
@@ -40,7 +39,10 @@ public class Character : MonoBehaviour
     TargetIndecator indecator;
     int index = 0;
 
-
+    public void SetCharacter(CharacterStatus status)
+    {
+        this.status = status;
+    }
 
     public void Awake()
     {
@@ -52,8 +54,8 @@ public class Character : MonoBehaviour
     {
         manager = CameraManager.GetInstance();
         unitManager = UnitManager.GetInstance();
-        if (weapon != null)
-            animator.runtimeAnimatorController = AnimatorControler.GetInstance().animations[weapon.weapon.type];
+        if (status.weapon != null)
+            animator.runtimeAnimatorController = AnimatorControler.GetInstance().animations[status.weapon.weapon.type];
         unitManager.AddUnit(this);
         animator.SetBool("Rest", true);
         animator.speed = 1;

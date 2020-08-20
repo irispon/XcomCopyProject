@@ -72,6 +72,8 @@
     <Compile Include="Assets\GameScript\AnimatorControler.cs" />
     <Compile Include="Assets\GameScript\Character.cs" />
     <Compile Include="Assets\GameScript\CharacterStatus.cs" />
+    <Compile Include="Assets\GameScript\DBparser.cs" />
+    <Compile Include="Assets\GameScript\DeckManager.cs" />
     <Compile Include="Assets\GameScript\GameManager.cs" />
     <Compile Include="Assets\GameScript\Move.cs" />
     <Compile Include="Assets\GameScript\Projectile.cs" />
@@ -152,6 +154,7 @@
     <Compile Include="Assets\Login\LoginWindow.cs" />
     <Compile Include="Assets\Login\RegisterWindow.cs" />
     <Compile Include="Assets\Login\RequestMessage.cs" />
+    <Compile Include="Assets\ModelInfo.cs" />
     <Compile Include="Assets\NameChange.cs" />
     <Compile Include="Assets\PlayerCache.cs" />
     <Compile Include="Assets\ProfileChace.cs" />
