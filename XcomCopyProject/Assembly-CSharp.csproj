@@ -75,6 +75,9 @@
     <Compile Include="Assets\GameScript\DBparser.cs" />
     <Compile Include="Assets\GameScript\DeckManager.cs" />
     <Compile Include="Assets\GameScript\GameManager.cs" />
+    <Compile Include="Assets\GameScript\GameRequester.cs" />
+    <Compile Include="Assets\GameScript\GameRoomManager.cs" />
+    <Compile Include="Assets\GameScript\GameSender.cs" />
     <Compile Include="Assets\GameScript\Move.cs" />
     <Compile Include="Assets\GameScript\Projectile.cs" />
     <Compile Include="Assets\GameScript\UnitManager.cs" />

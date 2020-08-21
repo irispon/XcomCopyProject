@@ -241,7 +241,8 @@ MonoBehaviour:
     moveRange: 10
     movePoint: 6
     attackPoint: 5
-  weapon: {fileID: 89683561}
+    model: 
+    weapon: {fileID: 89683561}
   righttHand: {fileID: 1215342011}
   leftHand: {fileID: 318547598}
   ablities: []
@@ -7667,7 +7668,8 @@ MonoBehaviour:
     moveRange: 2
     movePoint: 2
     attackPoint: 2
-  weapon: {fileID: 0}
+    model: 
+    weapon: {fileID: 0}
   righttHand: {fileID: 0}
   leftHand: {fileID: 0}
   ablities: []
@@ -9123,7 +9125,8 @@ MonoBehaviour:
     moveRange: 5
     movePoint: 2
     attackPoint: 2
-  weapon: {fileID: 0}
+    model: 
+    weapon: {fileID: 0}
   righttHand: {fileID: 0}
   leftHand: {fileID: 0}
   ablities: []
@@ -10729,7 +10732,8 @@ MonoBehaviour:
     moveRange: 2
     movePoint: 2
     attackPoint: 2
-  weapon: {fileID: 0}
+    model: 
+    weapon: {fileID: 0}
   righttHand: {fileID: 0}
   leftHand: {fileID: 0}
   ablities: []
@@ -13693,7 +13697,8 @@ MonoBehaviour:
     moveRange: 10
     movePoint: 6
     attackPoint: 5
-  weapon: {fileID: 3135091230192876601}
+    model: 
+    weapon: {fileID: 3135091230192876601}
   righttHand: {fileID: 2122492901}
   leftHand: {fileID: 2122492899}
   ablities: []
@@ -13738,6 +13743,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2122492895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2122492903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122492896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13ae723836b82c4aa1f7f3ce6fa88ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3135091230192508952
 Transform:
   m_ObjectHideFlags: 0

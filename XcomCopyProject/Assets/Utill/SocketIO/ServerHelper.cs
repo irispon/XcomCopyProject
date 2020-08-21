@@ -32,7 +32,7 @@ public class ServerHelper
 
 public enum SocketEvent
 {
-    chat, database
+    chat, database, room
 }
 
 public enum PostEvent
