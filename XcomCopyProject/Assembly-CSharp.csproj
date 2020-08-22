@@ -262,6 +262,7 @@
     <Compile Include="Assets\Utill\SocketIO\ServerHelper.cs" />
     <Compile Include="Assets\Utill\SocketIO\SocketManager.cs" />
     <Compile Include="Assets\Utill\SpriteSize.cs" />
+    <Compile Include="Assets\Utill\StringToVector.cs" />
     <Compile Include="Assets\Utill\UI\FloatText.cs" />
     <Compile Include="Assets\Utill\UI\HPControler.cs" />
     <Compile Include="Assets\Utill\UI\ImageTextManager.cs" />

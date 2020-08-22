@@ -5,36 +5,66 @@ using UnityEngine;
 
 public class GameRoomManager:SingletonObject<GameRoomManager>
 {
-    Socket chat;
+    Socket inGame;
 
     static public string roomName;
 
 
-    public void Connect(string roomName)
+    public void ConnectRoom(string roomName)
     {
 
-        if (chat != null)
+        if (inGame != null)
         {
-            chat.Emit(ServerEvent.disconnect.ToString());
-            Destroy(chat.gameObject);
+            inGame.Emit(ServerEvent.disconnect.ToString());
+            Destroy(inGame.gameObject);
         }
-        chat = Socket.Connect(ServerHelper.SERVERPATH + "/" + SocketEvent.room.ToString()+"/"+roomName);
-        chat.On("connect", () => {
-            Debug.Log("채팅 서버 접속" + chat.IsConnected);
-           chat.On(GameServerCommand.Move.ToString(), ()=> { 
-            
-           
-           
-           
+        inGame = Socket.Connect(ServerHelper.SERVERPATH + "/" + SocketEvent.room.ToString()+"/"+roomName);
+        inGame.On("connect", () => {
+            Debug.Log("채팅 서버 접속" + inGame.IsConnected);
+           inGame.On(GameServerCommand.Move.ToString(), (string boardSet)=> {
+               //서버는. 모든 캐릭터 오브젝트의 좌표를 가지고 있다. 호출시 마다 캐릭터의 좌표를 갱신해서 보내준다.
+               //[{name:xx,position:(11,11,11)},{name:xx,position:(11,11,11)}]
+               //
+
+
+
            });
+            inGame.On(GameServerCommand.Attack.ToString(), (string attack) => {
+                //누가- 어떻게- 누구에게- 어디로 
+                //{user:userName ,who:unitName, skill:xxx, to:unitName,position:(x,x,x,x)//선택 옵션.}
+
+
+            });
+
+            inGame.On(GameServerCommand.Turn.ToString(), (string turn) => {
+                //{active: username } 유저의 턴 활성화. 만약 자신이 아니면 비활성화 시키면 될 듯.
+
+            });
+
+            inGame.On(GameServerCommand.Dead.ToString(), (string deadUnit) => {
+                //{user:userName,active: unitName }
+
+            });
 
         });
 
     }
+    public void EmitAttack()
+    {
 
+    }
+
+    public void EmitMove()
+    {
+
+    }
+    public void EmitTurn()
+    {
+
+    }
 }
 
 enum GameServerCommand
 {
-    Move,Attack
+    Move,Attack,Turn,Dead
 }
