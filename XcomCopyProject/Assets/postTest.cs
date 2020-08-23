@@ -17,7 +17,7 @@ public class postTest : MonoBehaviour, ICallBack
         WWWForm form = new WWWForm();
         form.AddField("id", "iris");
         form.AddField("token", "test");
-        task = Request.PostRequest(ServerHelper.LOCALPATH + "/getinfo", form, this);
+        task = Request.AsyncPostRequest(ServerHelper.LOCALPATH + "/getinfo", form, this);
 
     }
 

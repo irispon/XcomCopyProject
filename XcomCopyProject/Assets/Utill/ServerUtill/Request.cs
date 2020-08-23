@@ -10,7 +10,7 @@ public class Request
 
 
     // Start is called before the first frame update
-    public static async Task<string> PostRequest(string uri, WWWForm form,ICallBack callBack =null)
+    public static async Task<string> AsyncPostRequest(string uri, WWWForm form,ICallBack callBack =null)
     {
      
 
@@ -48,6 +48,43 @@ public class Request
  
 
     }
+    //public static IEnumerator PostRequest(string uri, WWWForm form, ICallBack callBack = null)
+    //{
+
+
+    //    Debug.Log(uri);
+
+
+    //    UnityWebRequest uwr = UnityWebRequest.Post(uri, form);
+
+    //    uwr.SendWebRequest();
+
+       
+    //    while (!uwr.isDone)
+    //    {
+    //        yield return new WaitForSeconds(0.1f);
+    //    }
+
+
+    //    if (uwr.isNetworkError)
+    //    {
+    //        Debug.Log("Error While Sending: " + uwr.error);
+    //        if (callBack != null)
+    //            callBack.Back(PostEvent.error.ToString());//나중에 enum으로 바꾸자
+    //        return RequestMessage.serverError.ToString();
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Received: " + uwr.downloadHandler.text);
+    //        if (callBack != null)
+    //            callBack.Back(PostEvent.success.ToString());
+    //        return uwr.downloadHandler.text;
+
+    //    }
+
+
+
+    //}
     public static void PostSend(string uri, WWWForm form)
     {
         Debug.Log(uri);
@@ -83,6 +120,7 @@ public class Request
         }
 
     }
+
     public static IEnumerator GetCoruntin(string uri,Action<string> action)
     {
         UnityWebRequest uwr = UnityWebRequest.Get(uri);

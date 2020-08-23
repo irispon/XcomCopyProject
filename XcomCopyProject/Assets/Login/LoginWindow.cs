@@ -53,7 +53,7 @@ public class LoginWindow : SingletonObject<LoginWindow>, ICallBackHandler, ICall
         wWForm.AddField("id", id.text);
         wWForm.AddField("password", password.text);
 
-        Task<string> request = Request.PostRequest(ServerHelper.LOGINPATH(), wWForm);
+        Task<string> request = Request.AsyncPostRequest(ServerHelper.LOGINPATH(), wWForm);
         loadingIcon.gameObject.SetActive(true);
         string login = await request;
         Debug.Log(login);

@@ -1,15 +1,40 @@
 ﻿using socket.io;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using xcopy;
 
 public class GameRoomManager:SingletonObject<GameRoomManager>
 {
     Socket inGame;
 
     static public string roomName;
+    UnitManager units;
+    PlayerCache cache;
+
+    public void Start()
+    {
+        cache = PlayerCache.GetInstance();
+    }
+    public async void Match()
+    {
+     //   WaitDialog.
+        //await MatchingRequest();
+    }
 
 
+
+    private Task<string> MatchingRequest()
+    {
+      WWWForm form = new WWWForm();
+      form.AddField("id", cache.id);
+      form.AddField("token", cache.token);
+      Task<string> match=  Request.AsyncPostRequest(ServerHelper.SERVERPATH + "/" + SocketEvent.room.ToString() + "/"+GameServerCommand.Match,form);
+
+        return match;
+
+    }
     public void ConnectRoom(string roomName)
     {
 
@@ -66,5 +91,5 @@ public class GameRoomManager:SingletonObject<GameRoomManager>
 
 enum GameServerCommand
 {
-    Move,Attack,Turn,Dead
+    Move,Attack,Turn,Dead,Match
 }

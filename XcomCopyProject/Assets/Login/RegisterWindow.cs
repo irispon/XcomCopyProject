@@ -50,7 +50,7 @@ public class RegisterWindow : SingletonObject<RegisterWindow>,ICallBack
             group.interactable = false;
             loading.gameObject.SetActive(true);
 
-            Task<string> post = global::Request.PostRequest(ServerHelper.CREATEACCOUNT(), wwform);
+            Task<string> post = global::Request.AsyncPostRequest(ServerHelper.CREATEACCOUNT(), wwform);
             string request = await post;
 
             loading.gameObject.SetActive(false);

@@ -81,6 +81,7 @@
     <Compile Include="Assets\GameScript\Move.cs" />
     <Compile Include="Assets\GameScript\Projectile.cs" />
     <Compile Include="Assets\GameScript\UnitManager.cs" />
+    <Compile Include="Assets\GameScript\WaitDialog.cs" />
     <Compile Include="Assets\GameScript\Weapon.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
