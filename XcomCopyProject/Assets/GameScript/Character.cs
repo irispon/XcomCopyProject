@@ -69,7 +69,7 @@ public class Character : MonoBehaviour
     {
         Debug.Log(name);
         manager.Foucusing(gameObject);
-        Move.GetInstance().GetTurn(this);
+        MoveIndecator.GetInstance().GetTurn(this);
         isSelect = true;
 
     }

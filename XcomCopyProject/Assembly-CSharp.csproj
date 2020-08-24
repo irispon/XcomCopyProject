@@ -78,7 +78,7 @@
     <Compile Include="Assets\GameScript\GameRequester.cs" />
     <Compile Include="Assets\GameScript\GameRoomManager.cs" />
     <Compile Include="Assets\GameScript\GameSender.cs" />
-    <Compile Include="Assets\GameScript\Move.cs" />
+    <Compile Include="Assets\GameScript\MoveIndecator.cs" />
     <Compile Include="Assets\GameScript\Projectile.cs" />
     <Compile Include="Assets\GameScript\UnitManager.cs" />
     <Compile Include="Assets\GameScript\WaitDialog.cs" />
@@ -180,6 +180,7 @@
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\MouseRotation.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\SnowOverTime.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.cs" />
+    <Compile Include="Assets\UnitUICanvas.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
