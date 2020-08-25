@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class MoveIndecator : SingletonObject<MoveIndecator>
 {
-    [SerializeField]
-    UnitUICanvas uICanvas;
+
     float range;
     public Image moveRange;
     public Vector3 position;
@@ -22,7 +21,7 @@ public class MoveIndecator : SingletonObject<MoveIndecator>
     {
         gameObject.SetActive(false);
         mainCamera = CameraManager.GetInstance().mainCamera;
-        uICanvas.group.alpha = 0;
+
     }
 
     // Update is called once per frame
@@ -39,9 +38,6 @@ public class MoveIndecator : SingletonObject<MoveIndecator>
         transform.SetParent(unit.transform);
         transform.localPosition = new Vector3(0, 0, 0);
         transform.localRotation = Quaternion.Euler(0, 0, 0);
-        uICanvas.charName.text = unit.name;
-        uICanvas.charName.transform.localPosition = new Vector3(unit.transform.localPosition.x, unit.transform.localPosition.z, 0);
-        uICanvas.group.alpha = 1;
         range = unit.status.moveRange;
         moveRange.rectTransform.sizeDelta = new Vector2(range * 2, range * 2);
   
@@ -142,7 +138,7 @@ public class MoveIndecator : SingletonObject<MoveIndecator>
             yield return new WaitForFixedUpdate();
 
         }
-        uICanvas.group.alpha = 0;
+
         gameObject.SetActive(false);
         
 

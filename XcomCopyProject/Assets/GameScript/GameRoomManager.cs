@@ -19,8 +19,10 @@ public class GameRoomManager:SingletonObject<GameRoomManager>
     }
     public async void Match()
     {
-     //   WaitDialog.
-        //await MatchingRequest();
+        //   WaitDialog.
+        WaitDialog.GetInstance().Wait("서칭중", "매칭이 진행되고 있습니다.");
+        roomName =   await MatchingRequest();
+    
     }
 
 
