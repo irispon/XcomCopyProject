@@ -9,19 +9,20 @@ public class GameRoomManager:SingletonObject<GameRoomManager>
 {
     Socket inGame;
 
-    static public string roomName;
+    static public string roomName="testRoom";
     UnitManager units;
     PlayerCache cache;
 
     public void Start()
     {
         cache = PlayerCache.GetInstance();
+        ConnectRoom(roomName);//테스트용
     }
     public async void Match()
     {
         //   WaitDialog.
-        WaitDialog.GetInstance().Wait("서칭중", "매칭이 진행되고 있습니다.");
-        roomName =   await MatchingRequest();
+   //     WaitDialog.GetInstance().Wait("서칭중", "매칭이 진행되고 있습니다.");
+    //    roomName =   await MatchingRequest();
     
     }
 
@@ -47,7 +48,7 @@ public class GameRoomManager:SingletonObject<GameRoomManager>
         }
         inGame = Socket.Connect(ServerHelper.SERVERPATH + "/" + SocketEvent.room.ToString()+"/"+roomName);
         inGame.On("connect", () => {
-            Debug.Log("채팅 서버 접속" + inGame.IsConnected);
+            Debug.Log("서버 접속" + inGame.IsConnected);
            inGame.On(GameServerCommand.Move.ToString(), (string boardSet)=> {
                //서버는. 모든 캐릭터 오브젝트의 좌표를 가지고 있다. 호출시 마다 캐릭터의 좌표를 갱신해서 보내준다.
                //[{name:xx,position:(11,11,11)},{name:xx,position:(11,11,11)}]
