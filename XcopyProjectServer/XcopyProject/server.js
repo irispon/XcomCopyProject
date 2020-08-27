@@ -155,3 +155,7 @@ try {
 
 var player_request = require('./src/module/player_request');
 player_request.requests(app, connection);
+
+
+var inGame = require('./src/module/in_game');
+inGame.connect(app, server ,connection);

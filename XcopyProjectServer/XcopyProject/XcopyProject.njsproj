@@ -35,7 +35,13 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\module\email_certification.js" />
+    <Content Include="src\module\in_game.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\module\player_request.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\module\queue.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\AccountSucess.html" />
