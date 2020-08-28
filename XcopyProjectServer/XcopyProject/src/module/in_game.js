@@ -7,10 +7,10 @@ var router = express.Router();
 
 var inGameModule = {};
 
-var emptyRoom=queue.Queue;
+var emptyRoom=new queue();
 var fullRoom;
 emptyRoom.enqueue('aaa');
-console.log('test: ' + emptyRoom.empty);
+console.log('test: ' + emptyRoom.toString());
 inGameModule.connect = function (app,server, database) {
     
 
